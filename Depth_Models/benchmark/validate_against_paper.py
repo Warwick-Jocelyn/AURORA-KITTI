@@ -120,17 +120,20 @@ def parse_reference_tables(md_path: str) -> dict:
         if stripped.startswith("## DIFF") or stripped.startswith("## Conclusion"):
             break
 
-        # Detect split section headers
-        if "Table 4" in stripped and "TEST" in stripped:
-            current_split = "TEST"
-            in_data_block = False
-            header_seen = False
-            continue
-        if "Table 5" in stripped and "DENSE" in stripped:
-            current_split = "DENSE"
-            in_data_block = False
-            header_seen = False
-            continue
+        # Detect split section headers.
+        # Matches on dataset name so the reference file can be renumbered freely.
+        if stripped.startswith("#"):
+            up = stripped.upper()
+            if "AURORA" in up or ("TABLE 4" in up and "TEST" in up):
+                current_split = "TEST"
+                in_data_block = False
+                header_seen = False
+                continue
+            if "DENSE" in up:
+                current_split = "DENSE"
+                in_data_block = False
+                header_seen = False
+                continue
 
         if current_split is None:
             continue
@@ -170,7 +173,7 @@ def parse_reference_tables(md_path: str) -> dict:
                     continue
                 name, rmse, mae, irmse, imae = cols[0], cols[1], cols[2], cols[3], cols[4]
             # Strip "(Ours)" suffix used to mark the proposed method in the paper
-            name = re.sub(r'\s*\(Ours\)\s*$', '', name.strip())
+            name = re.sub(r'\s*\(ours\)\s*$', '', name.strip(), flags=re.I)
             refs[(name, current_split)] = {
                 "RMSE":  float(rmse.replace(",", "")),
                 "MAE":   float(mae.replace(",", "")),
