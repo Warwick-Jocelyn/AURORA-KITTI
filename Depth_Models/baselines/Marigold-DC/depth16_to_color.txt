@@ -1,0 +1,12 @@
+
+
+python depth16_to_color.py \
+   --in-path /path/to/aurora-root/Code/Marigold-DC/result/pred_greyscale_16bit \
+   --out-dir /path/to/aurora-root/Code/Marigold-DC/result/visualized_depth \
+   --min-m 0 --max-m 80 --cmap Spectral --invalid-zero-black
+
+
+python depth16_to_color.py \
+   --in-path /path/to/aurora-root/Code/Marigold-DC/result/ip_basic_val \
+   --out-dir /path/to/aurora-root/Code/Marigold-DC/result/ip_basoc_results \
+   --min-m 0 --max-m 80 --cmap Spectral --invalid-zero-black
