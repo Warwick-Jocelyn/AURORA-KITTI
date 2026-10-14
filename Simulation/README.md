@@ -17,7 +17,9 @@ Simulation/
 │   ├── configs/severity_presets/   light / moderate / heavy presets
 │   ├── configs/sensor_params/      Velodyne HDL-64E model + factory calibration
 │   └── pre_computed_materials/     fog integral tables, Mie scattering cache
-├── rgb/             RGB weather rendering — fog, rain streaks, lens occlusion
+├── rgb/             RGB weather rendering
+│   ├── snow/        falling snow + lens-adherent snowflakes
+│   ├── Rain_generation/  adherent raindrops
 │   └── validate/    FID / KID / IQA realism scoring
 ├── projection/      weathered 3D point cloud → image-aligned sparse depth
 │   └── validate/    range-bin statistics, drop-rate measurements

@@ -1,0 +1,7 @@
+conda activate cam_weather
+
+python checking_depth_and_save_txt.py 需要指定image，depth和生成的txt的路径
+
+python main.py img_bayer后面加图片路径 depth后面加刚生的txt路径
+
+/path/to/aurora-root/Code/Cam_Weather_perf-optimization_numba/fallingsnow_main.py
