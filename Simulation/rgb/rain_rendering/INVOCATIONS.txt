@@ -1,0 +1,22 @@
+conda activate py36_weatheraugment
+
+python main.py --dataset kitti --intensity 200 --frame_end 6
+nohup python main.py --dataset kitti --intensity 200 &
+nohup python main.py --dataset kitti --intensity 10 &
+
+默认输出路径 rain-rendering/data/output
+默认输入路径：
+calibration的txt文件：rain-rendering/data/source/kitti/data_object/training/calib
+图片：rain-rendering/data/source/kitti/data_object/training/image_2
+深度：rain-rendering/data/source/kitti/data_object/training/image_2/depth
+
+
+深度8bit图：/path/to/aurora-root/Dataset/AuroraDepth/Datasets/Split_Flattened_Dataset/8bit_clean_depth
+要invert，先scale到0-255
+
+rgb图：/path/to/aurora-root/Dataset/AuroraDepth/Datasets/Split_Flattened_Dataset/frame_image
+
+calib：/path/to/aurora-root/Dataset/AuroraDepth/Codes_Lidar_Generation/calib
+生成对应5天的txt
+
+要生成10mm和200mm
