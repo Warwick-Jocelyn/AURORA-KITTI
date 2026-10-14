@@ -1,0 +1,147 @@
+{
+  "_note": "Params(M) and Time(ms): methods appearing in the paper (Table 4) use paper-reported values (RTX 4090, each method's own reporting convention). NLSPN, CompletionFormer (ZeroShot & AURORA-ft), and OMNI-DC are rebuttal additions not in the paper — values from our own measurement (RTX 4090, batch=1, fp32, GPU-forward-only, CUDA Events, median 50 runs after 10 warmup). Modality: LiDAR=sparse depth only, RGB=image only, RGB+LiDAR=both.",
+
+  "IPBasic-fast": {
+    "modality": "LiDAR",
+    "params_M": 0,
+    "time_ms": 16.4,
+    "params_src": "paper Table 4: None (non-learned classical algorithm)",
+    "time_src": "paper Table 4: 16.4 ms (our CPU measurement was 6.4 ms — paper likely uses a different input size or platform)"
+  },
+
+  "IPBasic-multiscale": {
+    "modality": "LiDAR",
+    "params_M": 0,
+    "time_ms": 29.70,
+    "params_src": "paper Table 4: None (non-learned classical algorithm)",
+    "time_src": "paper Table 4: 29.70 ms"
+  },
+
+  "S2D-Sup-ZeroShot": {
+    "modality": "RGB+LiDAR",
+    "params_M": 26.11,
+    "time_ms": 6.10,
+    "params_src": "paper Table 4: 26.11M (DepthCompletionNet(input=rgbd, layers=34))",
+    "time_src": "paper Table 4: 6.10 ms (our measurement was 31.1 ms — paper likely uses TensorRT or different image size)"
+  },
+
+  "S2D-SelfSup-ZeroShot": {
+    "modality": "RGB+LiDAR",
+    "params_M": 26.11,
+    "time_ms": 6.10,
+    "params_src": "paper Table 4: 26.11M (same DepthCompletionNet architecture as supervised variant)",
+    "time_src": "paper Table 4: 6.10 ms"
+  },
+
+  "NLSPN-ZeroShot": {
+    "modality": "RGB+LiDAR",
+    "params_M": 26.2,
+    "time_ms": 39.5,
+    "params_src": "measured-here (not in paper): loaded NLSPN_KITTI_DC.pt via NLSPNModel(resnet34, prop_time=18, prop_kernel=3)",
+    "time_src": "measured-here: RTX 4090, CUDA Events, median 50 runs after 10 warmup, batch=1, fp32, 352x1216"
+  },
+
+  "CompletionFormer-ZeroShot": {
+    "modality": "RGB+LiDAR",
+    "params_M": 83.5,
+    "time_ms": 73.3,
+    "params_src": "measured-here (not in paper): loaded experiments_aurora/model_16.pt via CompletionFormer(resnet34, prop_time=18, prop_kernel=3)",
+    "time_src": "measured-here: RTX 4090, CUDA Events, median 50 runs after 10 warmup, batch=1, fp32, 352x1216"
+  },
+
+  "BPNet": {
+    "modality": "RGB+LiDAR",
+    "params_M": 89.87,
+    "time_ms": 48.60,
+    "params_src": "paper Table 4: 89.87M",
+    "time_src": "paper Table 4: 48.60 ms (our measurement was 84.5 ms — paper may use different timing convention)"
+  },
+
+  "DMD3C-Pretrained": {
+    "modality": "RGB+LiDAR",
+    "params_M": 89.87,
+    "time_ms": 48.60,
+    "params_src": "paper Table 4: 89.87M (same Net() architecture as BP-Net; paper reports as 'DMD3C')",
+    "time_src": "paper Table 4: 48.60 ms"
+  },
+
+  "DMD3C-distilled": {
+    "modality": "RGB+LiDAR",
+    "params_M": 89.87,
+    "time_ms": 48.60,
+    "params_src": "paper Table 4: 89.87M (same Net() architecture; paper reports both DMD3C variants under one entry)",
+    "time_src": "paper Table 4: 48.60 ms"
+  },
+
+  "Marigold-DC": {
+    "modality": "RGB+LiDAR",
+    "params_M": null,
+    "time_ms": 18000.0,
+    "params_src": "paper Table 4: N/A (diffusion model; UNet+VAE+text_encoder not separately counted in paper)",
+    "time_src": "paper Table 4: 18.0 s = 18000 ms (our measurement was ~34 s at 50 DDIM steps — paper uses fewer steps)"
+  },
+
+  "DepthAnythingV3": {
+    "modality": "RGB",
+    "params_M": 1689.80,
+    "time_ms": 165.7,
+    "params_src": "paper Table 4: 1689.80M",
+    "time_src": "paper Table 4: 165.7 ms (our measurement was 56.1 ms at process_res=504 — paper uses higher process_res)"
+  },
+
+  "UniK3D": {
+    "modality": "RGB",
+    "params_M": 358.83,
+    "time_ms": 45.08,
+    "params_src": "paper Table 4: 358.83M (ViT-L backbone)",
+    "time_src": "paper Table 4: 45.08 ms (matches our measured 45.1 ms)"
+  },
+
+  "OMNI-DC": {
+    "modality": "RGB+LiDAR",
+    "params_M": 420.7,
+    "time_ms": 319.9,
+    "params_src": "measured-here (not in paper): loaded checkpoints/modelv1.1_best_72epochs.pt via OGNIDC(load_dav2=1); 420.71M state_dict tensors",
+    "time_src": "measured-here: RTX 4090, CUDA Events, median 50 runs after 10 warmup, 352x1216, synthetic sparse input ~5% fill"
+  },
+
+  "S2D-SelfSup-AURORA": {
+    "modality": "RGB+LiDAR",
+    "params_M": 26.11,
+    "time_ms": 6.10,
+    "params_src": "paper Table 4: 26.11M (same DepthCompletionNet architecture, AURORA fine-tuned)",
+    "time_src": "paper Table 4: 6.10 ms"
+  },
+
+  "Sparse2Dense-Sup-AURORA": {
+    "modality": "RGB+LiDAR",
+    "params_M": 26.11,
+    "time_ms": 6.10,
+    "params_src": "paper Table 4: 26.11M (same DepthCompletionNet architecture, AURORA fine-tuned)",
+    "time_src": "paper Table 4: 6.10 ms"
+  },
+
+  "CompletionFormer-AURORA": {
+    "modality": "RGB+LiDAR",
+    "params_M": 83.5,
+    "time_ms": 73.3,
+    "params_src": "measured-here (not in paper): same CompletionFormer(resnet34) architecture as zero-shot variant",
+    "time_src": "measured-here: RTX 4090, CUDA Events, median 50 runs after 10 warmup, batch=1, fp32, 352x1216"
+  },
+
+  "DDCD": {
+    "modality": "RGB+LiDAR",
+    "params_M": 89.87,
+    "time_ms": 48.60,
+    "params_src": "paper Table 4: 89.87M; confirmed: paper checkpoint rank01_rmse2802.79mm_dmd3d_bp_kitti_best_ema_new_loss.pth (accessed via symlink BP-Net/checkpoints/DDCD/result_ema.pth)",
+    "time_src": "paper Table 4: 48.60 ms (our bs=1 GPU-only CUDA-Event measurement was 82.0 ms — paper convention differs)"
+  },
+
+  "DDCD-h352": {
+    "modality": "RGB+LiDAR",
+    "params_M": 89.87,
+    "time_ms": 48.60,
+    "params_src": "same BP-Net backbone as DDCD (89.87M); retrained at height=352 so the DA teacher supervises the full frame incl. top-96",
+    "time_src": "same architecture as DDCD → 48.60 ms (paper Table 4 convention)"
+  }
+}

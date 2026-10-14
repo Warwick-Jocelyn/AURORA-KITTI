@@ -1,0 +1,40 @@
+mean:
+  - 89.7518
+  - 92.3758
+  - 88.4394
+std:
+  - 80.8833
+  - 80.5267
+  - 80.2302
+train_sample_size: 85898
+test_sample_size: 1000
+height: 352
+width: 1216
+# mean/std unchanged from KITTI.yaml — same sensor, same dataset
+# height bumped 256 → 352 so Depth-Anything pseudo-label covers the top region
+trainset:
+  _target_: datasets.KITTI
+  mode: 'train'
+  RandCrop: true
+  path: ${data.path}
+  height: ${data.height}
+  width: ${data.width}
+  mean: ${data.mean}
+  std: ${data.std}
+  tp_min: 0   # REQUIRED at h=352: raw KITTI is 375px tall → max top-pad = 23px.
+              #   Default tp_min=50 would make randint(50,23) crash.
+              #   tp_min=0 gives range [0,23], keeping nearly the full frame.
+
+testset:
+  _target_: datasets.KITTI
+  mode: 'selval'
+  RandCrop: false
+  path: ${data.path}
+  height: ${data.height}
+  width: ${data.width}
+  mean: ${data.mean}
+  std: ${data.std}
+  # tp_min irrelevant for testset (RandCrop=false → fixed centre crop)
+
+path: datas/kitti
+mul_factor: 1.0

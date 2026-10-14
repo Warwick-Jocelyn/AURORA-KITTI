@@ -1,0 +1,12 @@
+conda activate unik3d
+cd /path/to/aurora-root/Code/UniK3D
+
+python ./scripts/demo.py
+
+保存16bitdepth在./scripts/demo.py用#############标记了
+
+cd /path/to/aurora-root/Code/UniK3D
+python ./scripts/infer_kitti_folders.py
+
+python ./scripts/benchmark_kitti_unik3d.py --type l --num_imgs 10 --mode infer_only
+

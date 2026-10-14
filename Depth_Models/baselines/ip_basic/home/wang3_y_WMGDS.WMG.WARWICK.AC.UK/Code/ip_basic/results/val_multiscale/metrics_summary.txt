@@ -1,0 +1,27 @@
+===== Depth Completion Evaluation (val) =====
+Images evaluated: 3309
+
+[Per-image Averages]
+iRMSE (1/km): 37.132667443333666
+iMAE  (1/km): 11.219762604342518
+MSE    (m^2): 102.19000385086066
+RMSE     (m): 8.859115067790595
+MAE      (m): 2.7364915318586704
+AbsRel      : 0.08711319464833292
+SqRel       : 0.06862025196886663
+Lg10        : 0.31862336719869083
+delta1      : 0.9203225799915634
+delta2      : 0.9266987627626461
+delta3      : 0.9298711335827609
+SiLog       : 279.8519038784382
+
+[Timing]
+Avg fill time per image (s):  0.01908547906039002
+Avg total time per image (s): 0.07145303323522692
+
+
+[Macro Average per-image]
+RMSE  (m): 8.859115065693242
+MAE   (m): 2.7364915318586704
+iRMSE(1/m): 167557.49203683963
+iMAE (1/m): 37390.9231803539

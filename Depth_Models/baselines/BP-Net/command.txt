@@ -1,0 +1,40 @@
+nohup python train.py \
+gpus=[0] num_workers=1 name=BP_KITTI \
+net=PMP data=KITTI \
+lr=1e-3 train_batch_size=2 test_batch_size=2 \
+sched/lr=NoiseOneCycleCosMo sched.lr.policy.max_momentum=0.90 \
+nepoch=30 test_epoch=25 ++net.sbn=true &
+
+# 有点麻烦因为train和test具体怎么样是我们自定义的日期。selval 还是自己根据annotaed的路来判断train和val的嗯呃呃？
+
+python train.py \
+gpus=[0] num_workers=1 name=BP_KITTI \
+net=PMP data=KITTI \
+lr=1e-3 train_batch_size=2 test_batch_size=2 \
+sched/lr=NoiseOneCycleCosMo sched.lr.policy.max_momentum=0.90 \
+nepoch=30 test_epoch=25 ++net.sbn=true 
+
+conda activate bp
+cd /path/to/aurora-root/PhD_Project_2025/BP-Net
+
+test on KITTI selval set
+
+python test.py gpus=[0] name=BP_KITTI ++chpt=BP_KITTI \
+net=PMP num_workers=1 \
+data=KITTI data.testset.mode=selval \
+test_batch_size=1 metric=RMSE ++net.compile=true
+
+metric=??? 有哪些metrics呢？？？MetricALL
+
+python test_param.py gpus=[0] name=BP_KITTI ++chpt=BP_KITTI \
+net=PMP num_workers=4 \
+data=KITTI data.testset.mode=selval \
+test_batch_size=1 metric=MetricALL ++net.compile=true
+
+python test.py gpus=[0] name=BP_KITTI ++chpt=BP_KITTI net=PMP num_workers=1 data=KITTI data.testset.mode=selval test_batch_size=2 metric=MetricALL ++net.compile=false
+
+python test.py gpus=[0] name=BP_KITTI ++chpt=BP_KITTI net=PMP num_workers=1 data=KITTI data.testset.mode=selval test_batch_size=2 metric=MetricALL ++net.compile=false
+
+python test.py gpus=[0] name=BP_KITTI ++chpt=BP_KITTI_Retrained net=PMP num_workers=1 data=KITTI data.testset.mode=selval test_batch_size=2 metric=MetricALL ++net.compile=false
+
+python test.py gpus=[0] name=DMD3C_Aurora_retrained net=PMP num_workers=1 data=KITTI data.testset.mode=selval test_batch_size=2 metric=MetricALL ++net.compile=false

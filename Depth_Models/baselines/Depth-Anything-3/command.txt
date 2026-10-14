@@ -1,0 +1,8 @@
+conda activate depth_anything_v3
+
+pip install torch\>=2 torchvision
+
+pip install --force-reinstall "numpy<1.27,>=1.23.5" scipy==1.10.1 matplotlib==3.7.5
+
+pip install xformers
+

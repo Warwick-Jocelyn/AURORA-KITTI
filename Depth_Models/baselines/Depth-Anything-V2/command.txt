@@ -1,0 +1,34 @@
+conda activate Depth-Anything-V2
+cd /path/to/aurora-root/Code/Depth-Anything-V2
+
+----------------------------------------------
+指定输入输出路径即可
+nohup python run.py --encoder vitl \
+  --img-path  /path/to/aurora-root/Dataset/PixelAccurateDepthBenchmark/datas/rgb_left_8bit \
+  --outdir /path/to/aurora-root/Dataset/PixelAccurateDepthBenchmark/datas/disp \
+  --pred-only --grayscale --input-size 1920 &
+
+nohup python run.py --encoder vitl \
+  --img-path /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped/image \
+  --outdir /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped/disp \
+  --pred-only --grayscale --input-size 1216 &
+-------------------------------------------------
+
+检查是否是16bit，不是的话转化为16bit：
+python postprocess_depth16.py /path/to/outdir
+
+python run.py --encoder vitl \
+  --img-path  /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/raw/2011_09_26/2011_09_26_drive_0005_sync/image_03/data \
+  --outdir /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/raw/2011_09_26/2011_09_26_drive_0005_sync/image_03/disp \
+  --pred-only --grayscale --input-size 1216
+
+
+nohup python run_batch.py --encoder vitl \
+--root /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti_original_DC_dataset/raw_used  \
+--input-size 1216   --pred-only   --grayscale   --workers 1 &
+
+nohup python run_batch.py --encoder vitl \
+--root /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti_original_DC_dataset/raw  \
+--input-size 1216   --pred-only   --grayscale   --workers 1 > ./nohup1.out 2>&1 &
+
+nohup *** > ./nohup1.out 2>&1 &

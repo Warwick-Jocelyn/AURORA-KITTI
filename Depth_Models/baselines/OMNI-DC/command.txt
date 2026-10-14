@@ -1,0 +1,53 @@
+conda activate OMNIDC
+
+
+结论很清晰：
+
+是 metric depth，单位为米。
+
+验证依据：
+
+在所有稀疏深度的有效点上，预测值与输入稀疏深度的平均误差为 0.0000m，最大误差仅 0.01m（SPN 传播导致的极小偏差）
+整张深度图的范围（1.574m ~ 51.503m）与输入稀疏点的范围完全一致
+从代码角度看，模型中 dep_integrator（注释写明 "scale-sensitive, bringing the actual scale values"）直接使用原始米制稀疏深度锚定输出尺度，whiten_sparse_depths 只影响骨干网络的输入特征，不影响最终的深度尺度。
+
+因此 experiments/demo_16bit.png 中 1 pixel = 0.001m（1mm） 的换算是正确的 metric depth。
+
+使用方法
+1. 准备输入文件夹
+文件命名规则（与 demo 示例一致）：
+
+input_folder/
+  ├── scene001_rgb.png
+  ├── scene001_sparse_depth.npy
+  ├── scene002_rgb.png
+  ├── scene002_sparse_depth.npy
+  └── ...
+2. 运行批处理脚本
+
+cd /path/to/OMNI-DC/src
+conda activate OMNIDC
+sh testing_scripts/batch_demo.sh <输入文件夹路径> <输出文件夹路径>
+例如：
+
+
+sh testing_scripts/batch_demo.sh /path/to/aurora-root/Code/OMNI-DC/folder_input_test /path/to/aurora-root/Code/OMNI-DC/folder_output_test
+
+3. 输出结果
+
+输出文件夹/
+  ├── scene001.npy         ← 稠密深度图（float32，单位：米）
+  ├── scene001.png         ← jet colormap 可视化
+  ├── scene001_16bit.png   ← 16-bit metric depth（1 pixel = 0.001m）
+  ├── scene002.npy
+  ├── scene002.png
+  ├── scene002_16bit.png
+  └── ...
+如果某个 _rgb.png 找不到对应的 _sparse_depth.npy，会打印 [SKIP] 提示并跳过，不会中断整体运行。
+
+使用实例：
+conda activate OMNIDC
+cd /path/to/aurora-root/Code/OMNI-DC/src
+sh testing_scripts/batch_demo.sh \
+/path/to/aurora-root/Code/OMNI-DC/folder_input_test \
+/path/to/aurora-root/Code/OMNI-DC/folder_output_test

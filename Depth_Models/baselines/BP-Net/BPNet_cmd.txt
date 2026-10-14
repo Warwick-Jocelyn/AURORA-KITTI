@@ -1,0 +1,8 @@
+conda activate bp
+
+cd /path/to/aurora-root/PhD_Project_2025/BP-Net
+
+conda deactivate
+
+scp -r /path/to/local/Downloads/depth_selection.zip user@host:/path/to/aurora-root/Dataset
+

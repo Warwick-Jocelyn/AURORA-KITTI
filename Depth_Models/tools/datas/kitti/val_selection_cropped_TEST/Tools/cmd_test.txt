@@ -1,0 +1,30 @@
+Cropped/Test
+
+========== Before (original CSV) ==========
+[weather] total=3356
+  - Clear:  838  ( 24.97%)
+  - Fog  :  837  ( 24.94%)
+  - Rain :  837  ( 24.94%)
+  - Snow :  844  ( 25.15%)
+[Time_of_Day] total=3356
+  - Day  : 1702  ( 50.72%)
+  - Night: 1654  ( 49.28%)
+
+扫描到可解析且去重后的图像数量: 1600
+
+========== After (filtered by current image folder) ==========
+[weather] total=1600
+  - Clear:  373  ( 23.31%)
+  - Fog  :  381  ( 23.81%)
+  - Rain :  472  ( 29.50%)
+  - Snow :  374  ( 23.38%)
+[Time_of_Day] total=1600
+  - Day  :  825  ( 51.56%)
+  - Night:  775  ( 48.44%)
+
+输出 CSV 行数: 1600
+
+rsync -av /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped_TEST_small/dens user@hpc-login:/path/to/hpc-home/dataset/test
+
+rsync -av /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped_VAL_small user@hpc-login:/path/to/hpc-home/dataset
+

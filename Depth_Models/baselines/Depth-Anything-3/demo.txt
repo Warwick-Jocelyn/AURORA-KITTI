@@ -1,0 +1,106 @@
+
+conda activate depth_anything_v3
+/path/to/aurora-root/Code/Depth-Anything-3
+
+--------------------------TEST----------------------
+python demo.py  \
+  --image-dir /path/to/hpc-home/code/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped/image \
+  --intrinsics-dir /path/to/hpc-home/code/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped/intrinsics \
+  --out-dir /path/to/hpc-home/code/Depth-Anything-3/results/AuroraKITTI_test \
+  --input-size 1216 \
+  --max-images 1600 \
+  --batch-size 8
+
+--------------------------VAL----------------------
+python demo.py  \
+  --image-dir /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped_TEST/image \
+  --intrinsics-dir /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped_TEST/intrinsics \
+  --out-dir /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped_TEST/da3 \
+  --input-size 1216 \
+  --max-images 1600 \
+  --batch-size 8
+
+-------------------------DENSE----------------------
+python demo.py  \
+  --image-dir /path/to/hpc-home/code/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped/image \
+  --intrinsics-dir /path/to/hpc-home/code/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped/intrinsics \
+  --out-dir /path/to/hpc-home/code/Depth-Anything-3/results/DENSE \
+  --input-size 1216 \
+  --max-images 1600 \
+  --batch-size 8
+
+
+------------------Updated------------------------
+尽量保持与输入一致分辨率（必要时才对齐回输入）
+python demo.py \
+  --image-dir /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped/image \
+  --intrinsics-dir /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped/intrinsics \
+  --out-dir /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped/da3\
+  --process-res 1216 \
+  --process-res-method upper_bound_resize \
+  --batch-size 8 \
+  --align-back-to-input \
+  --verbose-shape \
+  --save-used-intrinsics \
+  --amp
+
+python demo.py \
+  --image-dir /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped/image \
+  --intrinsics-dir /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped/intrinsics \
+  --out-dir /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped/DA3 \
+  --process-res 1216 \
+  --process-res-method upper_bound_resize \
+  --batch-size 8 \
+  --align-back-to-input \
+  --verbose-shape \
+  --amp
+
+
+  504/4=126
+
+python demo.py \
+  --image-dir /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped/image \
+  --intrinsics-dir /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped/intrinsics \
+  --out-dir /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped/DA3 \
+  --process-res 1216 \
+  --process-res-method upper_bound_resize \
+  --batch-size 8 \
+  --align-back-to-input \
+  --verbose-shape \
+  --amp
+
+
+---------------------------Batch------------------------------
+nohup python run_batch_da3_kitti_raw.py \
+  --root /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/raw \
+  --calib-root /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/calib \
+  --out-folder-name da3 \
+  --batch-size 8 \
+  --process-res 1216 \
+  --cap 2048 \
+  --process-res-method upper_bound_resize \
+  --align-back-to-input \
+  --png-scale 256 \
+  --max-depth-m 255 \
+  --amp \
+  > da3_train.log 2>&1 &
+
+
+和之前DA2的区别，修改datalaoder：
+1 Folder name
+2 这个是metricsdepth的16bit而不是relative depth，但肯定还是会有SS的误差（并且数值是invert的）
+
+# KITTI_DC
+nohup python kitti_DC.py \
+  --root /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti_depth_DC \
+  --calib-root /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti_depth_DC/calib \
+  --out-folder-name da3 \
+  --batch-size 8 \
+  --process-res 0 \
+  --cap 2048 \
+  --process-res-method upper_bound_resize \
+  --align-back-to-input \
+  --png-scale 256 \
+  --max-depth-m 255 \
+  --amp \
+  > da3_KITTI_DC.log 2>&1 &

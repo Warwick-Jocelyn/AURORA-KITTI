@@ -1,0 +1,83 @@
+python -m venv venv/marigold_dc
+source venv/marigold_dc/bin/activate
+conda deactivate
+
+
+conda deactivate
+conda activate marigold_dc
+
+python -m marigold_dc \
+    --in-image <PATH_RGB_IMAGE> \
+    --in-depth <PATH_SPARSE_DEPTH> \
+    --out-depth <PATH_DENSE_DEPTH>
+
+nohup python marigold_dc_batch.py \
+  --image-dir /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped_VAL_small/image \
+  --sparse-dir /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped_VAL_small/velodyne_raw_npy_in_meter_VAL \
+  --out-dir /path/to/aurora-root/Code/Marigold-DC/Marigold-DC/Marigold_DC_visualize_result_Aurora_val \
+  --depth16-dir /path/to/aurora-root/Code/Marigold-DC/Marigold_DC_result_16bit_Aurora_val \
+  --num_inference_steps 50 \
+  --ensemble_size 1 \
+  --processing_resolution 1216 &
+
+
+
+python -m marigold_dc \
+    --in-image /path/to/aurora-root/Code/Marigold-DC/data/image.png \
+    --in-depth /path/to/aurora-root/Code/Marigold-DC/data/sparse_1000.npy \
+    --out-depth /path/to/aurora-root/Code/Marigold-DC/data/0000_pred.npy
+
+
+python -m marigold_dc \
+    --in-image /path/to/aurora-root/PhD_Project_2025/BP-Net/datas/kitti/val_selection_cropped_original/image/2011_09_26_drive_0002_sync_image_0000000024_image_02.png \
+    --in-depth /path/to/aurora-root/PhD_Project_2025/BP-Net/datas/kitti/val_selection_cropped_original/velodyne_raw_npy_in_meter/2011_09_26_drive_0002_sync_velodyne_raw_0000000024_image_02.npy \
+    --out-depth /path/to/aurora-root/Code/Marigold-DC/data/aurorakitti_pred.npy \
+    --processing_resolution 1216
+
+
+source venv/marigold_dc/bin/activate
+
+nohup python marigold_dc_batch.py \
+  --image-dir /path/to/aurora-root/PhD_Project_2025/BP-Net/datas/kitti/val_selection_cropped_original/image \
+  --sparse-dir /path/to/aurora-root/PhD_Project_2025/BP-Net/datas/kitti/val_selection_cropped_original/velodyne_raw_npy_in_meter \
+  --out-dir /path/to/aurora-root/Code/Marigold-DC/result/data \
+  --depth16-dir /path/to/aurora-root/Code/Marigold-DC/result/pred_16bit \
+  --num_inference_steps 50 \
+  --ensemble_size 1 \
+  --processing_resolution 1216 &
+
+python marigold_dc_batch.py \
+  --image-dir /path/to/aurora-root/PhD_Project_2025/BP-Net/datas/kitti/val_selection_cropped_original/image \
+  --sparse-dir /path/to/aurora-root/PhD_Project_2025/BP-Net/datas/kitti/val_selection_cropped_original/velodyne_raw_npy_in_meter \
+  --out-dir /path/to/aurora-root/Code/Marigold-DC/result/data \
+  --depth16-dir /path/to/aurora-root/Code/Marigold-DC/result/pred_16bit \
+  --num_inference_steps 50 \
+  --ensemble_size 1 \
+  --processing_resolution 1216
+
+> /path/to/your_log_file 2>&1 &
+
+nohup python marigold_dc_batch.py \
+  --image-dir /path/to/aurora-root/PhD_Project_2025/BP-Net/datas/kitti/val_selection_cropped_TEST/image \
+  --sparse-dir /path/to/aurora-root/PhD_Project_2025/BP-Net/datas/kitti/val_selection_cropped_TEST/velodyne_raw_npy_in_meter \
+  --out-dir /path/to/aurora-root/Code/Marigold-DC/result/data_test \
+  --depth16-dir /path/to/aurora-root/Code/Marigold-DC/result/pred_16bit_test \
+  --num_inference_steps 50 \
+  --ensemble_size 1 \
+  --processing_resolution 1216 > ./nohup1.out 2>&1 &
+
+
+nohup *** > ./nohup1.out 2>&1 &
+
+  % Evaluate 
+
+python evaluate_kitti_depth16.py \
+--gt-dir   /path/to/aurora-root/PhD_Project_2025/BP-Net/datas/kitti/val_selection_cropped_original_not_move/velodyne_raw_npy_in_meter \
+--pred-dir /path/to/aurora-root/Code/Marigold-DC/result/pred_16bit_val \
+--out-summary /path/to/aurora-root/Code/Marigold-DC/result/metrics_summary.txt
+
+
+python evaluate_kitti_depth16.py \
+--gt-dir   /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped/velodyne_raw_npy_in_meter_test \
+--pred-dir /path/to/aurora-root/Code/Marigold-DC/Marigold_DC_result_16bit_Aurora_test \
+--out-summary /path/to/aurora-root/Code/Marigold-DC/result/metrics_summary_test.txt

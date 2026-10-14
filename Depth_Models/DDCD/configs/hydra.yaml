@@ -1,0 +1,39 @@
+# hydra:
+#   run:
+#     dir: outputs/${name}/${now:%Y-%m-%d_%H-%M-%S}
+#   output_subdir: .
+#   job:
+#     chdir: false
+#  job_logging:
+#    handlers:
+#      file:
+#        filename: ${name}.log
+
+# hydra:
+#   run:
+#     dir: outputs/${name}/${now:%Y-%m-%d_%H-%M-%S}
+#   output_subdir: .
+#   job:
+#     chdir: false
+
+# DMD3C/configs/hydra.yaml
+hydra:
+  run:
+    # 结果输出目录（随便指定一个你喜欢的）
+    dir: ./outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  sweep:
+    dir: ./multirun/${now:%Y-%m-%d}/${now:%H-%M-%S}
+    subdir: ${hydra.job.num}
+  job:
+    chdir: false
+
+# lambda_distill: 0.1
+# lambda_grad: 0.05
+
+# energy_patch: 16
+# energy_beta: 1.0
+# energy_lambda_s: 1.0
+# energy_lambda_a: 1.0
+# energy_w_min: 0.3
+# energy_kmin: 20
+# energy_tau_mode: median

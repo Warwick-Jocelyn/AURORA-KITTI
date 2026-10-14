@@ -1,0 +1,23 @@
+========== Before (original CSV) ==========
+[weather] total=3309
+  - Clear:  823  ( 24.87%)
+  - Fog  :  828  ( 25.02%)
+  - Rain :  827  ( 24.99%)
+  - Snow :  831  ( 25.11%)
+[Time_of_Day] total=3309
+  - Day  : 1735  ( 52.43%)
+  - Night: 1574  ( 47.57%)
+
+扫描到可解析且去重后的图像数量: 1600
+
+========== After (filtered by current image folder) ==========
+[weather] total=1600
+  - Clear:  390  ( 24.38%)
+  - Fog  :  416  ( 26.00%)
+  - Rain :  405  ( 25.31%)
+  - Snow :  389  ( 24.31%)
+[Time_of_Day] total=1600
+  - Day  :  880  ( 55.00%)
+  - Night:  720  ( 45.00%)
+
+输出 CSV 行数: 1600

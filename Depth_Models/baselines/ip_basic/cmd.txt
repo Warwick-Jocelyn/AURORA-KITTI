@@ -1,0 +1,9 @@
+conda activate ip_basic 
+
+cd /path/to/aurora-root/Code/ip_basic
+
+python3 ./demos/depth_completion_for_Aurora.py
+
+python3 ./demos/demo.py
+
+python3 ./demos/demo_test.py

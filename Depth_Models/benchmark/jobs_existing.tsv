@@ -1,0 +1,16 @@
+DDCD	TEST	/path/to/aurora-root/PhD_Project_2025/BP-Net/results/DDCD_AURORA/selval	gt	256
+DDCD	DENSE	/path/to/aurora-root/PhD_Project_2025/BP-Net/results/DDCD_DENSE/selval	gt	256
+BPNet	TEST	/path/to/aurora-root/PhD_Project_2025/BP-Net/results/BP_KITTI_AURORA/selval	gt	256
+BPNet	DENSE	/path/to/aurora-root/PhD_Project_2025/BP-Net/results/BP_KITTI_DENSE/selval	gt	256
+DMD3C-distilled	TEST	/path/to/aurora-root/PhD_Project_2025/BP-Net/results/DMD3C_paper_AURORA/selval	gt	256
+DMD3C-distilled	DENSE	/path/to/aurora-root/PhD_Project_2025/BP-Net/results/DMD3C_paper_DENSE/selval	gt	256
+Sparse2Dense-Sup-AURORA	TEST	/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Experiments_Plan/results_modality_ablation/preds_test_rgbd	gt	256
+Sparse2Dense-Sup-AURORA	DENSE	/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Experiments_Plan/results_modality_ablation/preds_dense_rgbd	gt	256
+Marigold-DC	TEST	/path/to/aurora-root/Code/Marigold-DC/Marigold_DC_result_16bit_Aurora_test	velodyne	256
+Marigold-DC	DENSE	/path/to/aurora-root/Code/Marigold-DC/Marigold_DC_result_16bit_DENSE	gt	256
+DepthAnythingV3	TEST	/path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped_TEST/da3	image	256
+DepthAnythingV3	DENSE	/path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped_DENSE/da3	gt	256
+UniK3D	TEST	/path/to/aurora-root/Code/UniK3D/results/depth16_test	unik3d	256
+UniK3D	DENSE	/path/to/aurora-root/Code/UniK3D/results/depth16	gt	256
+OMNI-DC	TEST	/path/to/aurora-root/Code/OMNI-DC/output_KITTI_Test_v256	image	256
+OMNI-DC	DENSE	/path/to/aurora-root/Code/OMNI-DC/output_KITTI_DENSE	gt	1000

@@ -1,0 +1,63 @@
+conda activate bp
+cd /path/to/aurora-root/PhD_Project_2025/self-supervised-depth-completion
+
+下载网络链接
+wget "http://datasets.lids.mit.edu/self-supervised-depth-completion/supervised/mode=dense.input=gd.resnet34.criterion=l2.lr=1e-05.bs=16.wd=0.pretrained=False.jitter=0.1.time=2019-02-27@22-09/model_best.pth.tar"
+
+./checkpoints/self-supervised/model_best.pth.tar
+
+python main.py --evaluate ./checkpoints_KITTIDC/self-supervised/model_best.pth.tar --data-folder /path/to/aurora-root/Dataset/AuroraKITTI/data --val select
+
+# train with the KITTI semi-dense annotations, rgbd input, and batch size 1
+python main.py --train-mode dense -b 1 --input rgbd
+
+# train with the self-supervised framework, not using ground truth
+python main.py --train-mode sparse+photo --resume ./checkpoints/self-supervised/model_best.pth.tar 
+
+# resume previous training
+python main.py --resume [checkpoint-path] 
+
+# test the trained model on the val_selection_cropped data
+python main.py --evaluate [checkpoint-path] --val select \
+--data-folder /path/to/aurora-root/Dataset/AuroraKITTI/data
+
+Val 莫名其妙的 把原始的val的6851 张 PNG 图片转换成了，1000 张 PNG 图片；从1242*375 变成了1216 x 352；具体crop的规则高度是截掉上方的天空+左右两边各自去掉13？（可以试一下）
+
+Self-supervised:
+Parameters:
+
+Supervised:
+Time: 
+
+python main.py --val full -b 4 --resume ./checkpoints/self-supervised/model_best.pth.tar 
+
+python main.py --train-mode sparse+photo -b 4 --input rgbd --data-folder /path/to/aurora-root/Dataset/AuroraKITTI/data
+
+Namespace(batch_size=4, cpu=False, criterion='l2', data_folder='/path/to/aurora-root/PhD_Project_2025/kitti_depth', epochs=11, evaluate='', input='gd', jitter=0.1, layers=34, lr=1e-05, pretrained=False, print_freq=10, rank_metric='rmse', result='/path/to/aurora-root/PhD_Project_2025/self-supervised-depth-completion/results', resume='', start_epoch=0, train_mode='dense', use_d=True, use_g=True, use_pose=False, use_rgb=False, val='full', w1=0, w2=0, weight_decay=0, workers=4)
+
+
+python main_updated.py --train-mode sparse+photo -b 4 --input rgbd --data-folder /path/to/aurora-root/Dataset/AuroraKITTI/data
+
+nohup python main.py --train-mode sparse+photo -b 4 --input rgbd --data-folder /path/to/aurora-root/Dataset/AuroraKITTI/data &
+
+
+nohup python main.py --train-mode dense -b 4 --input rgbd --data-folder /path/to/aurora-root/Dataset/AuroraKITTI/data &
+
+
+python main.py --evaluate ./checkpoints_AURORA/self-supervised/model_best.pth.tar --data-folder /path/to/aurora-root/Dataset/AuroraKITTI/data -b 4 --val select
+
+python main.py --evaluate ./checkpoints_AURORA/supervised/model_best.pth.tar --data-folder /path/to/aurora-root/Dataset/AuroraKITTI/data -b 4 --val select
+
+
+
+
+python main.py --evaluate ./checkpoints_KITTIDC/self-supervised/model_best.pth.tar --data-folder /path/to/aurora-root/Dataset/AuroraKITTI/data_test_as_val -b 4 --val select
+
+
+python main.py --evaluate ./checkpoints_AURORA/self-supervised/model_best.pth.tar --data-folder /path/to/aurora-root/Dataset/AuroraKITTI/data_test_as_val -b 4 --val select
+
+python main.py --evaluate ./checkpoints_AURORA/supervised/model_best.pth.tar --data-folder /path/to/aurora-root/Dataset/AuroraKITTI/data_test_as_val -b 4 --val select
+
+
+
+python main.py --evaluate ./checkpoints_AURORA/supervised/model_best.pth.tar --data-folder /path/to/aurora-root/Dataset/AuroraKITTI/data -b 4 --val select

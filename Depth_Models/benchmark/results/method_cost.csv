@@ -1,0 +1,9 @@
+method,type,params_M,ms_per_frame,fps_gpu,ckpt_size_MB,ckpt
+BPNet,depth-completion,89.9,61.6,16.2,344,BP-Net/checkpoints/BP_KITTI/result_ema.pth
+DMD3C,depth-completion,89.9,61.6,16.2,344,DMD3C/.../checkpoint/BP_KITTI_noisy_disp/dmd3c_distillation_depth_anything_v2.pth
+DDCD,depth-completion,89.9,61.6,16.2,344,DMD3C/.../checkpoints/_unified/rank01_..._dmd3d_bp_kitti_best_ema_new_loss.pth
+DA3,monocular,1689.8,165.7,6.0,6760,Code/Depth-Anything-3/checkpoint_local/model.safetensors
+UniK3D,monocular,358.8,68.6,14.6,1435,HF lpiccinelli/unik3d-vitl
+OMNI-DC,depth-completion,420.7,357.5,2.8,2367,Code/OMNI-DC/checkpoints/modelv1.1_best_72epochs.pt
+PromptDA,depth-completion,340.0,56.8,17.6,1360,HF depth-anything/prompt-depth-anything-vitl
+Marigold-DC,depth-completion,865.0,5000.0,0.2,3300,HF prs-eth/marigold-depth-v1-0

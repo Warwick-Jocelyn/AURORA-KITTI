@@ -1,0 +1,21 @@
+python demo_promptda_kitti.py \
+  --image-dir /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped/image \
+  --intrinsics-dir /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped/intrinsics \
+  --prompt-depth-dir /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped/velodyne_raw \
+  --out-dir /path/to/aurora-root/Code/PromptDA/results/Aurora_KITTI_test \
+  --max-images 8 \
+  --batch-size 8
+
+python demo_promptda_kitti.py \
+  --image-dir /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped/image \
+  --prompt-depth-dir /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped/velodyne_raw \
+  --out-dir /path/to/aurora-root/Code/PromptDA/results/Aurora_KITTI_test \
+  --ckpt /path/to/aurora-root/Code/PromptDA/checkpoints/model.ckpt \
+  --max-images 8 \
+  --batch-size 8 \
+  --prompt-name-replace "_sync_image_=_sync_velodyne_raw_"
+
+
+
+
+  --intrinsics-dir /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped/intrinsics \

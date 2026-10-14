@@ -1,0 +1,7 @@
+
+
+python make_val_clean_resize_crop.py \
+  --data_root /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti \
+  --gt_root   /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti_depth_DC \
+  --val_name  val_selection_cropped_VAL \
+  --save_mode copy --overwrite

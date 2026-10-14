@@ -1,0 +1,42 @@
+# name	set	pred_dir	name_map	scale	[crop_gt_top]
+# PROTOCOL: DENSE = BP-Net selval (bottom-256, crop_gt_top=96) applied UNIFORMLY to
+# every method (pred + GT both cropped to bottom 256 in eval_batch.py). TEST = full
+# 352 (its top-96 GT is empty -> 352==256 there; denoising metrics calibrated at 352).
+# All DDCD/BPNet/DMD3C DENSE preds are the native-352 outputs; DDCD uses rank01
+# (paperckpt_h352). For the 352 appendix table run eval_batch.py with --zero_crop.
+DDCD	TEST	/path/to/aurora-root/PhD_Project_2025/BP-Net/results/DDCD_AURORA/selval	gt	256
+DDCD	DENSE	/path/to/aurora-root/PhD_Project_2025/BP-Net/results/DDCD_DENSE_paperckpt_h352/selval	gt	256	96
+BPNet	TEST	/path/to/aurora-root/PhD_Project_2025/BP-Net/results/BP_KITTI_AURORA/selval	gt	256
+BPNet	DENSE	/path/to/aurora-root/PhD_Project_2025/BP-Net/results/BP_KITTI_DENSE_h352/selval	gt	256	96
+DMD3C-distilled	TEST	/path/to/aurora-root/PhD_Project_2025/BP-Net/results/DMD3C_paper_AURORA/selval	gt	256
+DMD3C-distilled	DENSE	/path/to/aurora-root/PhD_Project_2025/BP-Net/results/DMD3C_paper_DENSE_h352/selval	gt	256	96
+Sparse2Dense-Sup-AURORA	TEST	/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Experiments_Plan/results_modality_ablation/preds_test_rgbd	gt	256
+Sparse2Dense-Sup-AURORA	DENSE	/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Experiments_Plan/results_modality_ablation/preds_dense_rgbd	gt	256	96
+Marigold-DC	TEST	/path/to/aurora-root/Code/Marigold-DC/Marigold_DC_result_16bit_Aurora_test	velodyne	256
+Marigold-DC	DENSE	/path/to/aurora-root/Code/Marigold-DC/Marigold_DC_result_16bit_DENSE	gt	256	96
+DepthAnythingV3	TEST	/path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped_TEST/da3	image	256
+DepthAnythingV3	DENSE	/path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti/val_selection_cropped_DENSE/da3	gt	256	96
+UniK3D	TEST	/path/to/aurora-root/Code/UniK3D/results/depth16_test	unik3d	256
+UniK3D	DENSE	/path/to/aurora-root/Code/UniK3D/results/depth16	gt	256	96
+OMNI-DC	TEST	/path/to/aurora-root/Code/OMNI-DC/output_KITTI_Test_v256	image	256
+OMNI-DC	DENSE	/path/to/aurora-root/Code/OMNI-DC/output_KITTI_DENSE	gt	1000	96
+IPBasic-fast	TEST	/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Experiments_Plan/results_zeroshot_benchmark/preds/IPBasic-fast__TEST	gt	256
+IPBasic-fast	DENSE	/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Experiments_Plan/results_zeroshot_benchmark/preds/IPBasic-fast__DENSE	gt	256	96
+IPBasic-multiscale	TEST	/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Experiments_Plan/results_zeroshot_benchmark/preds/IPBasic-multiscale__TEST	gt	256
+IPBasic-multiscale	DENSE	/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Experiments_Plan/results_zeroshot_benchmark/preds/IPBasic-multiscale__DENSE	gt	256	96
+S2D-Sup-ZeroShot	TEST	/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Experiments_Plan/results_zeroshot_benchmark/preds/S2D-Sup-ZeroShot__TEST	gt	256
+S2D-Sup-ZeroShot	DENSE	/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Experiments_Plan/results_zeroshot_benchmark/preds/S2D-Sup-ZeroShot__DENSE	gt	256	96
+S2D-SelfSup-ZeroShot	TEST	/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Experiments_Plan/results_zeroshot_benchmark/preds/S2D-SelfSup-ZeroShot__TEST	gt	256
+S2D-SelfSup-ZeroShot	DENSE	/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Experiments_Plan/results_zeroshot_benchmark/preds/S2D-SelfSup-ZeroShot__DENSE	gt	256	96
+S2D-SelfSup-AURORA	TEST	/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Experiments_Plan/results_zeroshot_benchmark/preds/S2D-SelfSup-AURORA__TEST	gt	256
+S2D-SelfSup-AURORA	DENSE	/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Experiments_Plan/results_zeroshot_benchmark/preds/S2D-SelfSup-AURORA__DENSE	gt	256	96
+DMD3C-Pretrained	TEST	/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Experiments_Plan/results_zeroshot_benchmark/preds/DMD3C-Pretrained__TEST	gt	256
+DMD3C-Pretrained	DENSE	/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Experiments_Plan/results_zeroshot_benchmark/preds/DMD3C-Pretrained__DENSE	gt	256	96
+CompletionFormer-ZeroShot	TEST	/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Experiments_Plan/results_zeroshot_benchmark/preds/CompletionFormer-ZeroShot__TEST	gt	256
+CompletionFormer-ZeroShot	DENSE	/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Experiments_Plan/results_zeroshot_benchmark/preds/CompletionFormer-ZeroShot__DENSE	gt	256	96
+CompletionFormer-AURORA	TEST	/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Experiments_Plan/results_zeroshot_benchmark/preds/CompletionFormer-AURORA__TEST	gt	256
+CompletionFormer-AURORA	DENSE	/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Experiments_Plan/results_zeroshot_benchmark/preds/CompletionFormer-AURORA__DENSE	gt	256	96
+NLSPN-ZeroShot	TEST	/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Experiments_Plan/results_zeroshot_benchmark/preds/NLSPN-ZeroShot__TEST	gt	256
+NLSPN-ZeroShot	DENSE	/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Experiments_Plan/results_zeroshot_benchmark/preds/NLSPN-ZeroShot__DENSE	gt	256	96
+CSPNpp-ZeroShot	TEST	/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Experiments_Plan/results_zeroshot_benchmark/preds/CSPNpp-ZeroShot__TEST	gt	256
+CSPNpp-ZeroShot	DENSE	/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Experiments_Plan/results_zeroshot_benchmark/preds/CSPNpp-ZeroShot__DENSE	gt	256	96

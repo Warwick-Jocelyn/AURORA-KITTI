@@ -1,0 +1,37 @@
+Cropped/Val
+
+GT 先copy+resize+crop=GT validated
+disp 👌
+ 
+ 
+注意noisy disp为及bit呀？
+
+clean的为16bit inverse depth哦！ 数值为下面的
+记住disp原始数值为0-255；由于变成16bit为255*256
+
+关于Val的bit 
+
+。/datas/kitti/val_selection_cropped/disp为24bit到的noisy images的disparity map
+
+(muses) user@host:~$ python /path/to/aurora-root/Dataset/Bit_check.py
+The bit depth of the image is: 24
+The number of channels in the image is: 3
+Maximum value in the image: 0.99609375 (除以255之后) 因为取的是每一个通道的数值
+Minimum value in the image: 0
+Average value in the image: 0.33811301820015793
+
+
+但是  /datas/kitti/val_selection_cropped/disp_clean_16bit_cropped 为clean teacher的16bit的图像 只有一通道，如下
+
+(muses) user@host:~$ python /path/to/aurora-root/Dataset/Bit_check.py
+The bit depth of the image is: 16
+The number of channels in the image is: 1
+Maximum value in the image: 255.0
+Minimum value in the image: 0
+Average value in the image: 91.36559182491028
+
+
+ - 2011_09_26_drive_0005_sync_velodyne_raw_0000000146_image_02.png | 
+
+ missing_src: /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti_depth_DC/raw/2011_09_26/2011_09_26_drive_0005_sync/image_02/dens/0000000146.png
+ 这张图缺失了对应的LiDAR和clean Dens LiDAR
