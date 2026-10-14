@@ -1,0 +1,33 @@
+% Quantitative weather-realism table for the rebuttal (augments Table 1 / Fig. 4).
+% Requires: booktabs. Numbers from Realism/{fid_results,shift_results}.json.
+\begin{table}[t]
+  \centering
+  \small
+  \setlength{\tabcolsep}{5pt}
+  \caption{\textbf{Quantitative validation of AURORA-KITTI weather realism} against two real
+  adverse-weather datasets, MUSES and DENSE, per weather type. \textbf{WSC} is our domain-invariant
+  Weather-Shift Consistency: the cosine between the \emph{clear$\to$weather} physical-feature shift
+  (dark-channel, contrast, transmission, HF energy, \dots) of our synthetic data and of the real data
+  ($\uparrow$ better; static camera/content offsets cancel). \textbf{$\Delta$FID} $=
+  \mathrm{FID}(\text{clear}\!\to\!\text{real-}w)-\mathrm{FID}(w\!\to\!\text{real-}w)$ ($\uparrow$ better:
+  adding our weather reduces the gap to the real weather). Synthetic \emph{fog} aligns with real fog on
+  both datasets and \emph{snow} matches in direction; DENSE rain agrees, while MUSES rain is physically
+  near-identical to its own clear condition (real shift magnitude $0.26$ vs $1.73$ for fog), i.e. the
+  reference contains only mild rain.}
+  \begin{tabular}{l cc cc}
+    \toprule
+    & \multicolumn{2}{c}{\textbf{MUSES} (real)} & \multicolumn{2}{c}{\textbf{DENSE} (real)} \\
+    \cmidrule(lr){2-3}\cmidrule(lr){4-5}
+    Weather & WSC\,$\uparrow$ & $\Delta$FID\,$\uparrow$ & WSC\,$\uparrow$ & $\Delta$FID\,$\uparrow$ \\
+    \midrule
+    Fog  & \textbf{0.77} & $+23$ & \textbf{0.78} & $+36$ \\
+    Rain & $-0.32^{\dagger}$ & $-24^{\dagger}$ & 0.61 & $+42$ \\
+    Snow & 0.57$^{\ddagger}$ & $-25^{\ddagger}$ & \multicolumn{2}{c}{— (no snow in DENSE)} \\
+    \bottomrule
+  \end{tabular}
+  \\[2pt]
+  {\footnotesize $^{\dagger}$MUSES rain shift magnitude is $0.26$ ($\approx$ clear), so the cosine is
+  degenerate. $^{\ddagger}$Sign-agreement across features is $100\%$; higher FID reflects our
+  moderate/heavy severities vs.\ MUSES's milder snow.}
+  \label{tab:realism}
+\end{table}

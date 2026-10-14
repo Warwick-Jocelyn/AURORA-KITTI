@@ -1,0 +1,314 @@
+{
+  "far_range_dropout_rate_ge30m": {
+    "fog": {
+      "light": {
+        "clean_n": 600608,
+        "drop_n": 296216,
+        "rate": 0.4931935638552933
+      },
+      "moderate": {
+        "clean_n": 601715,
+        "drop_n": 590402,
+        "rate": 0.9811987402674024
+      },
+      "heavy": {
+        "clean_n": 628234,
+        "drop_n": 622956,
+        "rate": 0.9915986718324701
+      },
+      "monotonic": true,
+      "z_scores": {
+        "light_vs_moderate": 608.0187602496511,
+        "moderate_vs_heavy": 49.98036347361049,
+        "light_vs_heavy": 636.1196660802221
+      }
+    },
+    "snow": {
+      "light": {
+        "clean_n": 593410,
+        "drop_n": 333932,
+        "rate": 0.5627340287490942
+      },
+      "moderate": {
+        "clean_n": 601133,
+        "drop_n": 353476,
+        "rate": 0.5880162958945857
+      },
+      "heavy": {
+        "clean_n": 607530,
+        "drop_n": 362841,
+        "rate": 0.5972396424867907
+      },
+      "monotonic": true,
+      "z_scores": {
+        "light_vs_moderate": 27.951849015886754,
+        "moderate_vs_heavy": 10.318639872710632,
+        "light_vs_heavy": 38.30706172755691
+      }
+    }
+  },
+  "per_bin_dropout_rate_paired": {
+    "fog": {
+      "0-10": {
+        "values": [
+          0.0,
+          0.019725722657044805,
+          0.09383305287206506
+        ],
+        "monotonic": true
+      },
+      "10-20": {
+        "values": [
+          0.0002291520826041302,
+          0.05832837723024639,
+          0.3623823869691604
+        ],
+        "monotonic": true
+      },
+      "20-30": {
+        "values": [
+          0.02648799898308739,
+          0.3945801879767028,
+          0.9939911914214801
+        ],
+        "monotonic": true
+      },
+      "30-40": {
+        "values": [
+          0.2557297988803785,
+          0.9812831686020815,
+          0.9937390425347085
+        ],
+        "monotonic": true
+      },
+      "40-50": {
+        "values": [
+          0.6220237699136244,
+          0.9803130758687626,
+          0.9912414342629482
+        ],
+        "monotonic": true
+      },
+      "50-60": {
+        "values": [
+          0.8296853111867121,
+          0.9791320963443455,
+          0.9883914149923888
+        ],
+        "monotonic": true
+      },
+      ">60": {
+        "values": [
+          0.8996493829448744,
+          0.98545918764498,
+          0.9865720063430176
+        ],
+        "monotonic": true
+      }
+    },
+    "snow": {
+      "0-10": {
+        "values": [
+          0.16595899158288946,
+          0.1802990763071512,
+          0.1679151579068111
+        ],
+        "monotonic": false
+      },
+      "10-20": {
+        "values": [
+          0.08784660212425979,
+          0.0883322454308094,
+          0.09072991913274289
+        ],
+        "monotonic": true
+      },
+      "20-30": {
+        "values": [
+          0.2558580546917806,
+          0.249624347448919,
+          0.25882482245519106
+        ],
+        "monotonic": false
+      },
+      "30-40": {
+        "values": [
+          0.448872156462368,
+          0.4630995339442206,
+          0.4685148295706065
+        ],
+        "monotonic": true
+      },
+      "40-50": {
+        "values": [
+          0.604573948491802,
+          0.6207235093643498,
+          0.6329015769035123
+        ],
+        "monotonic": true
+      },
+      "50-60": {
+        "values": [
+          0.7204644881280805,
+          0.773673135375263,
+          0.7819458837075417
+        ],
+        "monotonic": true
+      },
+      ">60": {
+        "values": [
+          0.7363999068087833,
+          0.7937718912633475,
+          0.8166538691237949
+        ],
+        "monotonic": true
+      }
+    }
+  },
+  "spurious_count_per_frame": {
+    "fog": {
+      "light": {
+        "mean_per_frame": 372.8532818532818,
+        "std_per_frame": 145.6979795800484,
+        "n_frames": 259,
+        "mean_range_m": 16.402808969493314
+      },
+      "moderate": {
+        "mean_per_frame": 666.188679245283,
+        "std_per_frame": 241.58278838821573,
+        "n_frames": 265,
+        "mean_range_m": 4.834764186763623
+      },
+      "heavy": {
+        "mean_per_frame": 869.1758241758242,
+        "std_per_frame": 280.34221343145373,
+        "n_frames": 273,
+        "mean_range_m": 2.58894087674105
+      },
+      "monotonic_count_per_frame": true,
+      "z_scores_count_per_frame": {
+        "light_vs_moderate": 16.874083597818803,
+        "moderate_vs_heavy": 9.005063280338838,
+        "light_vs_heavy": 25.808059848244394
+      }
+    },
+    "snow": {
+      "light": {
+        "mean_per_frame": 324.57370517928285,
+        "std_per_frame": 44.05924056427132,
+        "n_frames": 251,
+        "mean_range_m": 11.360756293882261
+      },
+      "moderate": {
+        "mean_per_frame": 398.88582677165357,
+        "std_per_frame": 54.90592129106282,
+        "n_frames": 254,
+        "mean_range_m": 12.005342915058677
+      },
+      "heavy": {
+        "mean_per_frame": 441.968992248062,
+        "std_per_frame": 55.02028350216722,
+        "n_frames": 258,
+        "mean_range_m": 11.916665753148349
+      },
+      "monotonic_count_per_frame": true,
+      "z_scores_count_per_frame": {
+        "light_vs_moderate": 16.784253293510158,
+        "moderate_vs_heavy": 8.868116547414125,
+        "light_vs_heavy": 26.60705658409984
+      }
+    }
+  },
+  "perturbed_error_p50": {
+    "fog": {
+      "p50_light_mod_heavy": [
+        18.25390625,
+        31.56640625,
+        21.505859375
+      ],
+      "monotone_increasing": false,
+      "monotone_decreasing": false
+    },
+    "snow": {
+      "p50_light_mod_heavy": [
+        8.4375,
+        7.53125,
+        7.00390625
+      ],
+      "monotone_increasing": false,
+      "monotone_decreasing": true
+    }
+  },
+  "perturbed_error_verdict": "FAILS positive control: fog p50 is non-monotonic (light=18.25, moderate=31.57, heavy=21.51), same failure mode as range_rmse_pert_m in the original Deliverable-1 table. Not a valid severity probe -- discarded, not used for the snow verdict.",
+  "item1_literal_retention_far_bins": {
+    "fog": {
+      "30-40": {
+        "values": [
+          0.7429614676137535,
+          0.009690715574224006,
+          0.0
+        ],
+        "monotone_decreasing": true
+      },
+      "40-50": {
+        "values": [
+          0.3757270053369179,
+          0.0,
+          0.0
+        ],
+        "monotone_decreasing": false
+      },
+      "50-60": {
+        "values": [
+          0.16752551530918552,
+          0.0,
+          0.0
+        ],
+        "monotone_decreasing": false
+      },
+      ">60": {
+        "values": [
+          0.09662820691039958,
+          0.0,
+          0.0
+        ],
+        "monotone_decreasing": false
+      }
+    },
+    "snow": {
+      "30-40": {
+        "values": [
+          0.560603643556775,
+          0.5522217429574378,
+          0.54903649291722
+        ],
+        "monotone_decreasing": true
+      },
+      "40-50": {
+        "values": [
+          0.3989962439268271,
+          0.3871806897414251,
+          0.37641592536072754
+        ],
+        "monotone_decreasing": true
+      },
+      "50-60": {
+        "values": [
+          0.2782196160816317,
+          0.22772971709141923,
+          0.21815774323546344
+        ],
+        "monotone_decreasing": true
+      },
+      ">60": {
+        "values": [
+          0.25661075193662997,
+          0.1945291339922574,
+          0.17088985581435032
+        ],
+        "monotone_decreasing": true
+      }
+    }
+  },
+  "item1_verdict": "Corroborates item 2 for snow (all 4 far bins monotone decreasing, consistent with rising dropout). NOT usable as fog's positive control on its own: heavy-fog far bins collapse to 0 valid weather points (near-total attenuation), so the ratio is uninformative/degenerate there -- item 2 (paired dropout, denominator = clean count, always well-populated) is the primary metric; item 1 is reported as a corroborating cross-check only."
+}

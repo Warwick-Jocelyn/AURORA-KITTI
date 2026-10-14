@@ -1,0 +1,887 @@
+{
+  "pools": {
+    "AURORA/clear": 763,
+    "AURORA/fog": 797,
+    "AURORA/rain": 877,
+    "AURORA/snow": 763,
+    "DENSE/clear": 80,
+    "DENSE/fog": 1360,
+    "DENSE/rain": 160,
+    "MUSES/clear": 750,
+    "MUSES/fog": 583,
+    "MUSES/rain": 584,
+    "MUSES/snow": 583
+  },
+  "feature_table": {
+    "AURORA/clear": {
+      "dcp": [
+        0.1276,
+        0.0788
+      ],
+      "contrast": [
+        0.2362,
+        0.0772
+      ],
+      "airlight": [
+        0.9881,
+        0.0374
+      ],
+      "sat": [
+        0.3131,
+        0.1188
+      ],
+      "transmit": [
+        0.8783,
+        0.0744
+      ],
+      "hf": [
+        0.0067,
+        0.0038
+      ],
+      "colorful": [
+        0.096,
+        0.036
+      ],
+      "bright": [
+        0.2589,
+        0.1247
+      ],
+      "spots": [
+        0.0667,
+        0.0364
+      ]
+    },
+    "AURORA/fog": {
+      "dcp": [
+        0.3491,
+        0.3251
+      ],
+      "contrast": [
+        0.1361,
+        0.0731
+      ],
+      "airlight": [
+        0.8848,
+        0.1674
+      ],
+      "sat": [
+        0.3173,
+        0.287
+      ],
+      "transmit": [
+        0.6649,
+        0.3064
+      ],
+      "hf": [
+        0.0011,
+        0.0009
+      ],
+      "colorful": [
+        0.0513,
+        0.0236
+      ],
+      "bright": [
+        0.4168,
+        0.3347
+      ],
+      "spots": [
+        0.0169,
+        0.016
+      ]
+    },
+    "AURORA/rain": {
+      "dcp": [
+        0.2276,
+        0.1227
+      ],
+      "contrast": [
+        0.1855,
+        0.0539
+      ],
+      "airlight": [
+        0.9458,
+        0.0817
+      ],
+      "sat": [
+        0.1486,
+        0.1207
+      ],
+      "transmit": [
+        0.7748,
+        0.1186
+      ],
+      "hf": [
+        0.0028,
+        0.0022
+      ],
+      "colorful": [
+        0.0316,
+        0.0104
+      ],
+      "bright": [
+        0.3175,
+        0.1339
+      ],
+      "spots": [
+        0.0348,
+        0.0255
+      ]
+    },
+    "AURORA/snow": {
+      "dcp": [
+        0.1848,
+        0.1459
+      ],
+      "contrast": [
+        0.1941,
+        0.0733
+      ],
+      "airlight": [
+        0.912,
+        0.0853
+      ],
+      "sat": [
+        0.2639,
+        0.1886
+      ],
+      "transmit": [
+        0.8134,
+        0.1443
+      ],
+      "hf": [
+        0.0018,
+        0.0008
+      ],
+      "colorful": [
+        0.042,
+        0.0094
+      ],
+      "bright": [
+        0.2942,
+        0.1871
+      ],
+      "spots": [
+        0.0398,
+        0.0216
+      ]
+    },
+    "DENSE/clear": {
+      "dcp": [
+        0.1102,
+        0.0678
+      ],
+      "contrast": [
+        0.1594,
+        0.0903
+      ],
+      "airlight": [
+        0.8247,
+        0.1526
+      ],
+      "sat": [
+        0.107,
+        0.0515
+      ],
+      "transmit": [
+        0.8824,
+        0.0583
+      ],
+      "hf": [
+        0.0025,
+        0.0016
+      ],
+      "colorful": [
+        0.0283,
+        0.0118
+      ],
+      "bright": [
+        0.183,
+        0.1109
+      ],
+      "spots": [
+        0.045,
+        0.0323
+      ]
+    },
+    "DENSE/fog": {
+      "dcp": [
+        0.1443,
+        0.0776
+      ],
+      "contrast": [
+        0.1476,
+        0.0727
+      ],
+      "airlight": [
+        0.7166,
+        0.1673
+      ],
+      "sat": [
+        0.1217,
+        0.0589
+      ],
+      "transmit": [
+        0.817,
+        0.0813
+      ],
+      "hf": [
+        0.0008,
+        0.0006
+      ],
+      "colorful": [
+        0.0294,
+        0.0129
+      ],
+      "bright": [
+        0.1998,
+        0.0972
+      ],
+      "spots": [
+        0.0128,
+        0.0139
+      ]
+    },
+    "DENSE/rain": {
+      "dcp": [
+        0.1481,
+        0.088
+      ],
+      "contrast": [
+        0.1369,
+        0.0749
+      ],
+      "airlight": [
+        0.6544,
+        0.1783
+      ],
+      "sat": [
+        0.1151,
+        0.0599
+      ],
+      "transmit": [
+        0.799,
+        0.0838
+      ],
+      "hf": [
+        0.0005,
+        0.0003
+      ],
+      "colorful": [
+        0.0265,
+        0.0143
+      ],
+      "bright": [
+        0.1978,
+        0.1095
+      ],
+      "spots": [
+        0.0062,
+        0.0053
+      ]
+    },
+    "MUSES/clear": {
+      "dcp": [
+        0.129,
+        0.0724
+      ],
+      "contrast": [
+        0.1337,
+        0.0411
+      ],
+      "airlight": [
+        0.7848,
+        0.165
+      ],
+      "sat": [
+        0.2682,
+        0.1451
+      ],
+      "transmit": [
+        0.8324,
+        0.1102
+      ],
+      "hf": [
+        0.0022,
+        0.0013
+      ],
+      "colorful": [
+        0.0551,
+        0.0177
+      ],
+      "bright": [
+        0.2213,
+        0.08
+      ],
+      "spots": [
+        0.016,
+        0.0114
+      ]
+    },
+    "MUSES/fog": {
+      "dcp": [
+        0.142,
+        0.1085
+      ],
+      "contrast": [
+        0.0991,
+        0.0415
+      ],
+      "airlight": [
+        0.5949,
+        0.2291
+      ],
+      "sat": [
+        0.312,
+        0.2723
+      ],
+      "transmit": [
+        0.7657,
+        0.1908
+      ],
+      "hf": [
+        0.0004,
+        0.0004
+      ],
+      "colorful": [
+        0.0305,
+        0.0128
+      ],
+      "bright": [
+        0.1896,
+        0.1137
+      ],
+      "spots": [
+        0.0024,
+        0.0039
+      ]
+    },
+    "MUSES/rain": {
+      "dcp": [
+        0.1236,
+        0.0755
+      ],
+      "contrast": [
+        0.1301,
+        0.0304
+      ],
+      "airlight": [
+        0.8238,
+        0.145
+      ],
+      "sat": [
+        0.2512,
+        0.1499
+      ],
+      "transmit": [
+        0.8437,
+        0.109
+      ],
+      "hf": [
+        0.0023,
+        0.0013
+      ],
+      "colorful": [
+        0.0576,
+        0.0315
+      ],
+      "bright": [
+        0.2199,
+        0.0693
+      ],
+      "spots": [
+        0.0157,
+        0.011
+      ]
+    },
+    "MUSES/snow": {
+      "dcp": [
+        0.1411,
+        0.0757
+      ],
+      "contrast": [
+        0.1141,
+        0.0238
+      ],
+      "airlight": [
+        0.6803,
+        0.1892
+      ],
+      "sat": [
+        0.2089,
+        0.1482
+      ],
+      "transmit": [
+        0.7749,
+        0.1486
+      ],
+      "hf": [
+        0.002,
+        0.0014
+      ],
+      "colorful": [
+        0.0453,
+        0.027
+      ],
+      "bright": [
+        0.2367,
+        0.0686
+      ],
+      "spots": [
+        0.0147,
+        0.0113
+      ]
+    }
+  },
+  "w1_matrix": {
+    "DENSE/clear": {
+      "clear": {
+        "agg_W1": 0.961,
+        "per_feat": {
+          "dcp": 0.135,
+          "contrast": 1.062,
+          "airlight": 0.85,
+          "sat": 1.115,
+          "transmit": 0.106,
+          "hf": 1.746,
+          "colorful": 2.35,
+          "bright": 0.446,
+          "spots": 0.84
+        }
+      },
+      "fog": {
+        "agg_W1": 1.013,
+        "per_feat": {
+          "dcp": 1.627,
+          "contrast": 0.445,
+          "airlight": 0.434,
+          "sat": 1.249,
+          "transmit": 1.514,
+          "hf": 0.577,
+          "colorful": 0.802,
+          "bright": 1.399,
+          "spots": 1.066
+        }
+      },
+      "rain": {
+        "agg_W1": 0.537,
+        "per_feat": {
+          "dcp": 0.747,
+          "contrast": 0.674,
+          "airlight": 0.647,
+          "sat": 0.319,
+          "transmit": 0.665,
+          "hf": 0.309,
+          "colorful": 0.147,
+          "bright": 0.79,
+          "spots": 0.537
+        }
+      },
+      "snow": {
+        "agg_W1": 0.551,
+        "per_feat": {
+          "dcp": 0.517,
+          "contrast": 0.487,
+          "airlight": 0.503,
+          "sat": 0.849,
+          "transmit": 0.535,
+          "hf": 0.398,
+          "colorful": 0.476,
+          "bright": 0.653,
+          "spots": 0.539
+        }
+      }
+    },
+    "DENSE/fog": {
+      "clear": {
+        "agg_W1": 1.261,
+        "per_feat": {
+          "dcp": 0.14,
+          "contrast": 1.225,
+          "airlight": 1.413,
+          "sat": 1.035,
+          "transmit": 0.379,
+          "hf": 2.441,
+          "colorful": 2.309,
+          "bright": 0.378,
+          "spots": 2.033
+        }
+      },
+      "fog": {
+        "agg_W1": 0.876,
+        "per_feat": {
+          "dcp": 1.565,
+          "contrast": 0.303,
+          "airlight": 0.875,
+          "sat": 1.227,
+          "transmit": 1.401,
+          "hf": 0.131,
+          "colorful": 0.761,
+          "bright": 1.444,
+          "spots": 0.173
+        }
+      },
+      "rain": {
+        "agg_W1": 0.594,
+        "per_feat": {
+          "dcp": 0.531,
+          "contrast": 0.527,
+          "airlight": 1.192,
+          "sat": 0.31,
+          "transmit": 0.3,
+          "hf": 0.826,
+          "colorful": 0.137,
+          "bright": 0.691,
+          "spots": 0.828
+        }
+      },
+      "snow": {
+        "agg_W1": 0.644,
+        "per_feat": {
+          "dcp": 0.45,
+          "contrast": 0.643,
+          "airlight": 1.017,
+          "sat": 0.769,
+          "transmit": 0.429,
+          "hf": 0.395,
+          "colorful": 0.436,
+          "bright": 0.638,
+          "spots": 1.019
+        }
+      }
+    },
+    "DENSE/rain": {
+      "clear": {
+        "agg_W1": 1.385,
+        "per_feat": {
+          "dcp": 0.165,
+          "contrast": 1.372,
+          "airlight": 1.736,
+          "sat": 1.071,
+          "transmit": 0.49,
+          "hf": 2.572,
+          "colorful": 2.41,
+          "bright": 0.368,
+          "spots": 2.283
+        }
+      },
+      "fog": {
+        "agg_W1": 0.958,
+        "per_feat": {
+          "dcp": 1.525,
+          "contrast": 0.371,
+          "airlight": 1.198,
+          "sat": 1.229,
+          "transmit": 1.38,
+          "hf": 0.262,
+          "colorful": 0.861,
+          "bright": 1.394,
+          "spots": 0.406
+        }
+      },
+      "rain": {
+        "agg_W1": 0.692,
+        "per_feat": {
+          "dcp": 0.508,
+          "contrast": 0.671,
+          "airlight": 1.516,
+          "sat": 0.3,
+          "transmit": 0.252,
+          "hf": 0.957,
+          "colorful": 0.24,
+          "bright": 0.703,
+          "spots": 1.078
+        }
+      },
+      "snow": {
+        "agg_W1": 0.745,
+        "per_feat": {
+          "dcp": 0.41,
+          "contrast": 0.79,
+          "airlight": 1.34,
+          "sat": 0.805,
+          "transmit": 0.408,
+          "hf": 0.527,
+          "colorful": 0.54,
+          "bright": 0.62,
+          "spots": 1.269
+        }
+      }
+    },
+    "MUSES/clear": {
+      "clear": {
+        "agg_W1": 0.973,
+        "per_feat": {
+          "dcp": 0.14,
+          "contrast": 1.416,
+          "airlight": 1.058,
+          "sat": 0.269,
+          "transmit": 0.31,
+          "hf": 1.869,
+          "colorful": 1.419,
+          "bright": 0.361,
+          "spots": 1.914
+        }
+      },
+      "fog": {
+        "agg_W1": 0.784,
+        "per_feat": {
+          "dcp": 1.639,
+          "contrast": 0.461,
+          "airlight": 0.521,
+          "sat": 0.857,
+          "transmit": 1.263,
+          "hf": 0.441,
+          "colorful": 0.207,
+          "bright": 1.578,
+          "spots": 0.09
+        }
+      },
+      "rain": {
+        "agg_W1": 0.62,
+        "per_feat": {
+          "dcp": 0.627,
+          "contrast": 0.715,
+          "airlight": 0.843,
+          "sat": 0.647,
+          "transmit": 0.358,
+          "hf": 0.302,
+          "colorful": 0.814,
+          "bright": 0.565,
+          "spots": 0.708
+        }
+      },
+      "snow": {
+        "agg_W1": 0.548,
+        "per_feat": {
+          "dcp": 0.532,
+          "contrast": 0.834,
+          "airlight": 0.692,
+          "sat": 0.34,
+          "transmit": 0.293,
+          "hf": 0.177,
+          "colorful": 0.455,
+          "bright": 0.708,
+          "spots": 0.9
+        }
+      }
+    },
+    "MUSES/fog": {
+      "clear": {
+        "agg_W1": 1.504,
+        "per_feat": {
+          "dcp": 0.268,
+          "contrast": 1.894,
+          "airlight": 2.045,
+          "sat": 0.818,
+          "transmit": 0.79,
+          "hf": 2.594,
+          "colorful": 2.273,
+          "bright": 0.43,
+          "spots": 2.427
+        }
+      },
+      "fog": {
+        "agg_W1": 0.835,
+        "per_feat": {
+          "dcp": 1.395,
+          "contrast": 0.518,
+          "airlight": 1.508,
+          "sat": 0.396,
+          "transmit": 0.727,
+          "hf": 0.284,
+          "colorful": 0.724,
+          "bright": 1.409,
+          "spots": 0.55
+        }
+      },
+      "rain": {
+        "agg_W1": 0.88,
+        "per_feat": {
+          "dcp": 0.545,
+          "contrast": 1.193,
+          "airlight": 1.83,
+          "sat": 0.884,
+          "transmit": 0.431,
+          "hf": 0.979,
+          "colorful": 0.085,
+          "bright": 0.751,
+          "spots": 1.222
+        }
+      },
+      "snow": {
+        "agg_W1": 0.789,
+        "per_feat": {
+          "dcp": 0.348,
+          "contrast": 1.312,
+          "airlight": 1.665,
+          "sat": 0.371,
+          "transmit": 0.346,
+          "hf": 0.549,
+          "colorful": 0.418,
+          "bright": 0.683,
+          "spots": 1.413
+        }
+      }
+    },
+    "MUSES/rain": {
+      "clear": {
+        "agg_W1": 0.944,
+        "per_feat": {
+          "dcp": 0.105,
+          "contrast": 1.466,
+          "airlight": 0.855,
+          "sat": 0.361,
+          "transmit": 0.262,
+          "hf": 1.805,
+          "colorful": 1.351,
+          "bright": 0.368,
+          "spots": 1.923
+        }
+      },
+      "fog": {
+        "agg_W1": 0.774,
+        "per_feat": {
+          "dcp": 1.584,
+          "contrast": 0.566,
+          "airlight": 0.403,
+          "sat": 0.77,
+          "transmit": 1.22,
+          "hf": 0.505,
+          "colorful": 0.217,
+          "bright": 1.612,
+          "spots": 0.089
+        }
+      },
+      "rain": {
+        "agg_W1": 0.613,
+        "per_feat": {
+          "dcp": 0.662,
+          "contrast": 0.765,
+          "airlight": 0.652,
+          "sat": 0.555,
+          "transmit": 0.427,
+          "hf": 0.266,
+          "colorful": 0.901,
+          "bright": 0.575,
+          "spots": 0.717
+        }
+      },
+      "snow": {
+        "agg_W1": 0.538,
+        "per_feat": {
+          "dcp": 0.481,
+          "contrast": 0.883,
+          "airlight": 0.518,
+          "sat": 0.248,
+          "transmit": 0.263,
+          "hf": 0.24,
+          "colorful": 0.554,
+          "bright": 0.743,
+          "spots": 0.909
+        }
+      }
+    },
+    "MUSES/snow": {
+      "clear": {
+        "agg_W1": 1.183,
+        "per_feat": {
+          "dcp": 0.117,
+          "contrast": 1.687,
+          "airlight": 1.601,
+          "sat": 0.564,
+          "transmit": 0.639,
+          "hf": 1.958,
+          "colorful": 1.761,
+          "bright": 0.354,
+          "spots": 1.963
+        }
+      },
+      "fog": {
+        "agg_W1": 0.808,
+        "per_feat": {
+          "dcp": 1.581,
+          "contrast": 0.584,
+          "airlight": 1.064,
+          "sat": 0.774,
+          "transmit": 0.968,
+          "hf": 0.354,
+          "colorful": 0.258,
+          "bright": 1.604,
+          "spots": 0.089
+        }
+      },
+      "rain": {
+        "agg_W1": 0.614,
+        "per_feat": {
+          "dcp": 0.55,
+          "contrast": 0.985,
+          "airlight": 1.386,
+          "sat": 0.326,
+          "transmit": 0.174,
+          "hf": 0.353,
+          "colorful": 0.477,
+          "bright": 0.517,
+          "spots": 0.757
+        }
+      },
+      "snow": {
+        "agg_W1": 0.617,
+        "per_feat": {
+          "dcp": 0.468,
+          "contrast": 1.104,
+          "airlight": 1.224,
+          "sat": 0.298,
+          "transmit": 0.238,
+          "hf": 0.102,
+          "colorful": 0.439,
+          "bright": 0.736,
+          "spots": 0.948
+        }
+      }
+    }
+  },
+  "verdict": {
+    "DENSE/clear": {
+      "closest_AURORA_weather": "rain",
+      "matched_is_closest": false,
+      "agg_W1_matched": 0.961,
+      "agg_W1_clear": 0.961
+    },
+    "DENSE/fog": {
+      "closest_AURORA_weather": "rain",
+      "matched_is_closest": false,
+      "agg_W1_matched": 0.876,
+      "agg_W1_clear": 1.261
+    },
+    "DENSE/rain": {
+      "closest_AURORA_weather": "rain",
+      "matched_is_closest": true,
+      "agg_W1_matched": 0.692,
+      "agg_W1_clear": 1.385
+    },
+    "MUSES/clear": {
+      "closest_AURORA_weather": "snow",
+      "matched_is_closest": false,
+      "agg_W1_matched": 0.973,
+      "agg_W1_clear": 0.973
+    },
+    "MUSES/fog": {
+      "closest_AURORA_weather": "snow",
+      "matched_is_closest": false,
+      "agg_W1_matched": 0.835,
+      "agg_W1_clear": 1.504
+    },
+    "MUSES/rain": {
+      "closest_AURORA_weather": "snow",
+      "matched_is_closest": false,
+      "agg_W1_matched": 0.613,
+      "agg_W1_clear": 0.944
+    },
+    "MUSES/snow": {
+      "closest_AURORA_weather": "rain",
+      "matched_is_closest": false,
+      "agg_W1_matched": 0.617,
+      "agg_W1_clear": 1.183
+    }
+  }
+}

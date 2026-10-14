@@ -1,0 +1,14 @@
+beam_radius: 8.7e-3 # meters
+receiver_area: 2.41e-06 # square meters
+wavelength: 9.05e-07 # meters
+pulse_width: 2.e-9 # seconds
+horizontal_fov: 115 # meters
+vertical_fov: 25 # meters
+min_elev_angle: -12.5 # degrees
+max_elev_angle: 12.5 # degrees
+min_az_angle: -57.5 # degrees
+max_az_angle: 57.5 # degrees
+v_channels: 250
+h_channels: 1150
+max_range: 250 # meters
+intensity_DR: 8 #bits

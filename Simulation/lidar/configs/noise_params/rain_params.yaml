@@ -1,0 +1,11 @@
+rain_intensity: 10.0  # mm/h
+min_drop_size: 0.05  # mm 0.05 original
+water_refract_index:
+  real: 1.328
+  imaginary: 4.86e-7
+
+
+
+# Light: 10.0 / 📈 平均保留率: 86.56%  | 平均 drop: 13.44%
+# Moderate: 100mm / Val: 📈 平均保留率: 87.16%  | 平均 drop: 12.84%
+# Heavy: 200.0 /  Val:

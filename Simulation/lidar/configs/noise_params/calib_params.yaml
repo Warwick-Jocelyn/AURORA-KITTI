@@ -1,0 +1,3 @@
+azimuth_std: 0.001 # degrees
+elevation_std: 0.127 # degrees
+elevation_margin_degrees: 180.0

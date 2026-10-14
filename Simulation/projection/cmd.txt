@@ -1,0 +1,26 @@
+关于projection的代码注释
+
+A. CSV（清单文件）
+
+路径：csv_path
+
+必含字段：
+
+name（如：2011_09_26_drive_0002_sync_image_02_0000000006）
+
+sequence_id（如：2011_09_26_drive_0002 或类似，脚本会用它抽取日期前缀）
+
+可选筛选字段（若要按天气/强度过滤）：
+
+weather（如：Fog）
+
+severity（如：light）
+
+脚本会按 weather 与 severity 两列进行过滤（如果传入对应参数）
+
+
+conda activate muses
+cd /path/to/aurora-root/Dataset/AuroraDepth/Codes_Lidar_Generation/Projection
+
+python main.py
+

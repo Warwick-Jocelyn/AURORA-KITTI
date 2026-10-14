@@ -1,0 +1,7 @@
+# AURORA-KITTI severity preset.
+# Reconstructed from hand-written notes in the original configs/noise_params/*.yaml.
+# In the original pipeline severity was set by HAND-EDITING the params file between
+# runs; --csv_severity only selected which frames to process. These presets make that
+# tacit convention explicit and reproducible.
+# Fog/haze, MODERATE. Retention: train 91.62% / test 85.92% / val 91.06%
+beta: 0.1

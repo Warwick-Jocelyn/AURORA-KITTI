@@ -1,0 +1,172 @@
+# AURORA-KITTI — recorded LiDAR simulation invocations
+# Transcribed from the original run log (UTF-16LE). Paths replaced with placeholders.
+# This is the only surviving record of the exact commands used; severity was set by
+# hand-editing configs/noise_params/*.yaml between runs -- see configs/severity_presets/.
+
+scp -r /path/to/local/Downloads/lidar_compound_noise_models.zip user@host://path/to/aurora-root/PhD_Project_2025
+
+conda create --name weather_lidar python=3.9 -y
+conda activate weather_lidar
+
+source deactivate 
+s
+source open3d_env/bin/activate
+
+cd /path/to/local/Desktop/PCL_Visualization/lidar_compound_noise_models
+
+python visualise_frame.py \                                            
+ --file_path /path/to/local/Desktop/PCL_Visualization/KITTI_Sample/0000000146.bin \
+ --sensor_cfg ./configs/sensor_params/lidar_velodyne_64_config.yaml \
+ --weather wet  
+
+
+Questions:
+(1) alpha: 0.06  # 1/m could you pls let me know other parameters how to tune into whaever in their papers?
+(2)
+
+############### FOG ##################
+python visualise_frame.py --file_path /path/to/aurora-root/PhD_Project_2025/KITTI_Sample/sequences/00/velodyne/0000000146.bin --sensor_cfg ./configs/sensor_params/lidar_velodyne_64_config.yaml --weather snow
+
+
+python ./visualise_frame.py \
+ --file_path /path/to/aurora-root/PhD_Project_2025/KITTI_Sample/sequences/00/velodyne/0000000146.bin \
+ --sensor_cfg ./configs/sensor_params/lidar_velodyne_64_config.yaml \
+ --weather haze
+
+############### RAIN ##################
+python ./lidar_noise_Simulation_models/visualise_frame.py \
+ --file_path ./KITTI_Sample/0000000146.bin \
+ --sensor_cfg ./lidar_noise_Simulation_models/configs/sensor_params/lidar_velodyne_64_config.yaml \
+ --noise_params ./lidar_noise_Simulation_models/configs/noise_params/rain_params.yaml --weather rain
+
+############### WET ##################
+python visualise_frame.py --file_path /path/to/aurora-root/PhD_Project_2025/KITTI_Sample/sequences/00/velodyne/0000000146.bin --sensor_cfg ./configs/sensor_params/lidar_velodyne_64_config.yaml --noise_params ./configs/noise_params/wet_ground_params.yaml --weather wet
+
+############### SNOW ##################
+python ./lidar_noise_Simulation_models/visualise_frame.py \
+ --file_path ./KITTI_Sample/0000000146.bin \
+ --sensor_cfg ./lidar_noise_Simulation_models/configs/sensor_params/lidar_velodyne_64_config.yaml \
+ --weather SNOW
+
+python visualise_frame.py \
+--file_path /path/to/local/Desktop/PCL_Visualization/KITTI_Sample/0000000146.bin \
+--sensor_cfg ./configs/sensor_params/lidar_velodyne_64_config.yaml \
+--weather wet_rain
+
+python simulate_on_dataset.py \
+--dataset_root /path/to/local/Desktop/PCL_Visualization/KITTI_Sample \
+--sensor_cfg ./configs/sensor_params/lidar_velodyne_64_config.yaml \
+--weather wet_rain --brighten
+
+python simulate_on_dataset.py \
+--dataset_root /path/to/aurora-root/PhD_Project_2025/lidar_compound_noise_models_original/KITTI_Sample \
+--sensor_cfg ./configs/sensor_params/lidar_velodyne_64_config.yaml \
+--weather rain  
+
+python simulate_on_dataset.py --dataset_root ./KITTI_Sample/ --sensor_cfg ./configs/sensor_params/lidar_velodyne_64_config.yaml --weather snow
+
+python visualise_frame.py --file_path /path/to/aurora-root/PhD_Project_2025/lidar_compound_noise_models_original/KITTI_Sample/sequences/00/velodyne/0000000005.bin --sensor_cfg ./configs/sensor_params/lidar_velodyne_64_config.yaml --weather snow --depth_color
+
+python visualise_frame.py --file_path /path/to/aurora-root/PhD_Project_2025/lidar_compound_noise_models_original/KITTI_Sample/sequences/00/velodyne/0000000005.bin --sensor_cfg ./configs/sensor_params/lidar_velodyne_64_config.yaml --weather snow --depth_color
+
+conda activate weather_lidar_1  
+conda remove --name weather_lidar_updated --all 
+
+conda activate weather_lidar_1
+
+# -------Haze/Foggy Model------------
+#light
+python simulate_from_csv.py \
+  --csv_path ./raw_lidar/val.csv \
+  --csv_weather Fog --csv_severity light \
+  --sim_weather wet_rain \
+  --sensor_cfg ./configs/sensor_params/lidar_velodyne_64_config.yaml
+ 
+ 
+
+#moderate
+python simulate_from_csv.py \
+  --csv_path ./raw_lidar/val.csv \
+  --csv_weather Fog --csv_severity light \
+  --sim_weather wet_rain \
+  --sensor_cfg ./configs/sensor_params/lidar_velodyne_64_config.yaml
+
+
+# heavy
+python simulate_from_csv.py \
+  --csv_path ./raw_lidar/train.csv \
+  --csv_weather Fog --csv_severity heavy \
+  --sim_weather haze \
+  --sensor_cfg ./configs/sensor_params/lidar_velodyne_64_config.yaml
+
+
+# -------Rain&Wet Model------------
+#light
+
+  --sim_weather wet_ground \
+
+
+  --sim_weather rain_wet_ground \
+
+python3 simulate_from_csv.py \
+  --csv_path ./raw_lidar/train.csv \
+  --simulated_root ./raw_lidar_simulated_Rain_heavy \
+  --csv_weather Rain --csv_severity heavy \
+  --sim_weather wet_ground \
+  --sensor_cfg ./configs/sensor_params/lidar_velodyne_64_config.yaml 
+
+python3 simulate_from_csv.py \
+  --csv_path ./raw_lidar/test.csv \
+  --simulated_root ./raw_lidar_simulated_Rain_heavy \
+  --csv_weather Rain --csv_severity heavy \
+  --sim_weather wet_ground \
+  --sensor_cfg ./configs/sensor_params/lidar_velodyne_64_config.yaml 
+
+python3 simulate_from_csv.py \
+  --csv_path ./raw_lidar/test.csv \
+  --simulated_root ./raw_lidar_simulated_Rain_heavy \
+  --csv_weather Rain --csv_severity heavy \
+  --sim_weather rain \
+  --sensor_cfg ./configs/sensor_params/lidar_velodyne_64_config.yaml 
+
+
+conda activate weather_lidar
+python simulate_from_csv.py   --csv_path ./raw_lidar/val.csv   --csv_weather Snow --csv_severity light   --sim_weather snow  --sensor_cfg ./configs/sensor_params/lidar_velodyne_64_config.yaml
+
+conda activate lidar_weather
+
+python3 simulate_from_csv.py   --csv_path ./raw_lidar/train.csv                                                                     val.csv   -v_weather Snopython3 simulate_from_csv.py   --csv_path ./raw_lidar/val.csv   -             python3 simulate_from_csv.py   --csv_path ./raw_lidar/val.csv   -
+
+python3 simulate_from_csv.py \
+  --csv_path /path/to/aurora-root/Dataset/AuroraDepth/Codes_Lidar_Generation/Projection/missing.csv \
+  --csv_weather Snow --csv_severity light \
+  --sim_weather snow  --sensor_cfg ./configs/sensor_params/lidar_velodyne_64_config.yaml
+
+python3 simulate_from_csv.py \
+  --csv_path /path/to/aurora-root/PhD_Project_2025/lidar_compound_noise_models_original/raw_lidar/missing.csv \
+  --csv_weather Rain --csv_severity light \
+  --sim_weather wet_ground --sensor_cfg ./configs/sensor_params/lidar_velodyne_64_config.yaml
+
+python3 simulate_from_csv.py \
+  --csv_path /path/to/aurora-root/PhD_Project_2025/lidar_compound_noise_models_original/raw_lidar/missing.csv \
+  --csv_weather Rain --csv_severity light \
+  --sim_weather wet_ground --sensor_cfg ./configs/sensor_params/lidar_velodyne_64_config.yaml
+
+nohup python3 simulate_from_csv.py \
+  --csv_path ./raw_lidar/val.csv \
+  --csv_weather Snow --csv_severity light \
+  --sim_weather snow --sensor_cfg ./configs/sensor_params/lidar_velodyne_64_config.yaml > ./nohup_val_snow.out 2>&1 &
+
+nohup your_command > ./nohup_val_snow.out 2>&1 &
+
+nohup python3 simulate_from_csv.py --csv_path ./raw_lidar/test.csv --csv_weather Snow --csv_severity heavy --sim_weather snow --sensor_cfg ./configs/sensor_params/lidar_velodyne_64_config.yaml
+
+python3 simulate_from_csv.py   --csv_path ./raw_lidar/val.csv   --simulated_root ./raw_lidar_simulated_Rain   --csv_weather Rain --csv_severity heavy  --sim_weather rain_wet_ground  --sensor_cfg ./configs/sensor_params/lidar_velodyne_64_config.yaml 
+
+
+nohup 
+
+python3 simulate_from_csv.py --csv_path ./raw_lidar/val.csv --csv_weather Snow --csv_severity heavy --sim_weather snow --sensor_cfg ./configs/sensor_params/lidar_velodyne_64_config.yaml
+
+
+Weather Lidar 的snow model是错误的❌ 会生成一概很稀疏的点云结果！！！无论snow rate 这里存在问题的啦！！！实在不行去找snow Model ETH版本

@@ -1,0 +1,28 @@
+# pavement_depth: 0.0002
+# pavement_depth: 0.00015
+# water_height: 0.00012
+# noise_floor: 0.2 
+# noise_floor: 0.2 
+
+# pavement_depth: 0.0012
+# water_height: 0.0010
+# noise_floor: 0.2
+
+# # Light Wet
+pavement_depth: 0.00012
+water_height: 0.00002
+noise_floor: 0.10
+
+# 📈 平均保留率: 94.49%  | 平均 drop: 5.51%
+
+# # Medium Wet
+# pavement_depth: 0.00015
+# water_height: 0.00012
+# noise_floor: 0.10
+# 📈 平均保留率: 95.85%  | 平均 drop: 4.15%
+
+# Heavy Wet
+# pavement_depth: 0.00150
+# water_height: 0.00020
+# noise_floor: 0.2
+# 📈 平均保留率: 95.65%  | 平均 drop: 1.16%

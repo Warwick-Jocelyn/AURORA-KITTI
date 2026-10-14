@@ -1,0 +1,186 @@
+{
+  "normalization": "fixed to original 12-pool fit (see docstring)",
+  "n_per_pool": {
+    "DENSE/fog": 1360,
+    "DENSE/clear": 80,
+    "MUSES/snow": 583,
+    "DENSE/rain": 160,
+    "AURORA/fog": 797,
+    "AURORA/rain": 877,
+    "MUSES/fog": 583,
+    "AURORA/clear": 763,
+    "AURORA/snow": 763,
+    "MUSES/clear": 750,
+    "MUSES/rain": 584,
+    "AURORA-light/snow": 251,
+    "AURORA-light/rain": 292,
+    "AURORA-lightmod/fog": 524,
+    "AURORA-light/fog": 259,
+    "AURORA-lightmod/snow": 505,
+    "AURORA-lightmod/rain": 587
+  },
+  "sanity_check_vs_original_report": {
+    "DENSE/fog": {
+      "recomputed_cosine": 0.782,
+      "report_cosine": 0.78,
+      "cosine_match": true,
+      "recomputed_real_shift_mag": 1.589,
+      "report_real_shift_mag": 1.59,
+      "shift_match": true
+    },
+    "DENSE/rain": {
+      "recomputed_cosine": 0.609,
+      "report_cosine": 0.61,
+      "cosine_match": true,
+      "recomputed_real_shift_mag": 2.01,
+      "report_real_shift_mag": 2.01,
+      "shift_match": true
+    },
+    "MUSES/fog": {
+      "recomputed_cosine": 0.769,
+      "report_cosine": 0.77,
+      "cosine_match": true,
+      "recomputed_real_shift_mag": 1.729,
+      "report_real_shift_mag": 1.73,
+      "shift_match": true
+    },
+    "MUSES/rain": {
+      "recomputed_cosine": -0.319,
+      "report_cosine": -0.32,
+      "cosine_match": true,
+      "recomputed_real_shift_mag": 0.265,
+      "report_real_shift_mag": 0.26,
+      "shift_match": true
+    },
+    "MUSES/snow": {
+      "recomputed_cosine": 0.569,
+      "report_cosine": 0.57,
+      "cosine_match": true,
+      "recomputed_real_shift_mag": 0.859,
+      "report_real_shift_mag": 0.86,
+      "shift_match": true
+    }
+  },
+  "results": {
+    "MUSES/fog": {
+      "real_shift_mag": 1.729,
+      "n_real": 583,
+      "variants": {
+        "AURORA-light": {
+          "cosine": 0.74,
+          "shift_mag": 3.141,
+          "sign_agreement": 0.778,
+          "n": 259
+        },
+        "AURORA-lightmod": {
+          "cosine": 0.759,
+          "shift_mag": 3.613,
+          "sign_agreement": 0.889,
+          "n": 524
+        },
+        "AURORA-all": {
+          "cosine": 0.769,
+          "shift_mag": 4.248,
+          "sign_agreement": 0.889,
+          "n": 797
+        }
+      }
+    },
+    "MUSES/rain": {
+      "real_shift_mag": 0.265,
+      "n_real": 584,
+      "variants": {
+        "AURORA-light": {
+          "cosine": -0.317,
+          "shift_mag": 3.645,
+          "sign_agreement": 0.333,
+          "n": 292
+        },
+        "AURORA-lightmod": {
+          "cosine": -0.317,
+          "shift_mag": 3.632,
+          "sign_agreement": 0.333,
+          "n": 587
+        },
+        "AURORA-all": {
+          "cosine": -0.319,
+          "shift_mag": 3.363,
+          "sign_agreement": 0.333,
+          "n": 877
+        }
+      }
+    },
+    "MUSES/snow": {
+      "real_shift_mag": 0.859,
+      "n_real": 583,
+      "variants": {
+        "AURORA-light": {
+          "cosine": 0.573,
+          "shift_mag": 3.102,
+          "sign_agreement": 1.0,
+          "n": 251
+        },
+        "AURORA-lightmod": {
+          "cosine": 0.57,
+          "shift_mag": 3.122,
+          "sign_agreement": 1.0,
+          "n": 505
+        },
+        "AURORA-all": {
+          "cosine": 0.569,
+          "shift_mag": 3.103,
+          "sign_agreement": 1.0,
+          "n": 763
+        }
+      }
+    },
+    "DENSE/fog": {
+      "real_shift_mag": 1.589,
+      "n_real": 1360,
+      "variants": {
+        "AURORA-light": {
+          "cosine": 0.79,
+          "shift_mag": 3.141,
+          "sign_agreement": 0.778,
+          "n": 259
+        },
+        "AURORA-lightmod": {
+          "cosine": 0.795,
+          "shift_mag": 3.613,
+          "sign_agreement": 0.889,
+          "n": 524
+        },
+        "AURORA-all": {
+          "cosine": 0.782,
+          "shift_mag": 4.248,
+          "sign_agreement": 0.889,
+          "n": 797
+        }
+      }
+    },
+    "DENSE/rain": {
+      "real_shift_mag": 2.01,
+      "n_real": 160,
+      "variants": {
+        "AURORA-light": {
+          "cosine": 0.685,
+          "shift_mag": 3.645,
+          "sign_agreement": 0.889,
+          "n": 292
+        },
+        "AURORA-lightmod": {
+          "cosine": 0.684,
+          "shift_mag": 3.632,
+          "sign_agreement": 0.889,
+          "n": 587
+        },
+        "AURORA-all": {
+          "cosine": 0.609,
+          "shift_mag": 3.363,
+          "sign_agreement": 0.889,
+          "n": 877
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,233 @@
+{
+  "pools": {
+    "AURORA/clear": 763,
+    "AURORA/fog": 797,
+    "AURORA/rain": 877,
+    "AURORA/snow": 763,
+    "DENSE/clear": 80,
+    "DENSE/fog": 1360,
+    "DENSE/rain": 160,
+    "MUSES/clear": 750,
+    "MUSES/fog": 583,
+    "MUSES/rain": 584,
+    "MUSES/snow": 583
+  },
+  "matrix": {
+    "DENSE/clear": {
+      "clear": {
+        "FID": 310.1,
+        "KID_x100": 23.203,
+        "KID_std": 0.641
+      },
+      "fog": {
+        "FID": 302.3,
+        "KID_x100": 21.389,
+        "KID_std": 0.576
+      },
+      "rain": {
+        "FID": 316.5,
+        "KID_x100": 26.522,
+        "KID_std": 0.882
+      },
+      "snow": {
+        "FID": 315.3,
+        "KID_x100": 24.141,
+        "KID_std": 0.654
+      }
+    },
+    "DENSE/fog": {
+      "clear": {
+        "FID": 265.4,
+        "KID_x100": 21.389,
+        "KID_std": 0.226
+      },
+      "fog": {
+        "FID": 229.5,
+        "KID_x100": 15.838,
+        "KID_std": 0.171
+      },
+      "rain": {
+        "FID": 228.9,
+        "KID_x100": 18.811,
+        "KID_std": 0.182
+      },
+      "snow": {
+        "FID": 243.1,
+        "KID_x100": 18.628,
+        "KID_std": 0.176
+      }
+    },
+    "DENSE/rain": {
+      "clear": {
+        "FID": 283.0,
+        "KID_x100": 23.384,
+        "KID_std": 0.594
+      },
+      "fog": {
+        "FID": 244.4,
+        "KID_x100": 16.955,
+        "KID_std": 0.369
+      },
+      "rain": {
+        "FID": 241.4,
+        "KID_x100": 20.088,
+        "KID_std": 0.384
+      },
+      "snow": {
+        "FID": 255.5,
+        "KID_x100": 19.756,
+        "KID_std": 0.365
+      }
+    },
+    "MUSES/clear": {
+      "clear": {
+        "FID": 116.0,
+        "KID_x100": 9.136,
+        "KID_std": 0.024
+      },
+      "fog": {
+        "FID": 157.0,
+        "KID_x100": 14.239,
+        "KID_std": 0.075
+      },
+      "rain": {
+        "FID": 212.3,
+        "KID_x100": 24.557,
+        "KID_std": 0.153
+      },
+      "snow": {
+        "FID": 208.1,
+        "KID_x100": 21.914,
+        "KID_std": 0.039
+      }
+    },
+    "MUSES/fog": {
+      "clear": {
+        "FID": 151.6,
+        "KID_x100": 9.154,
+        "KID_std": 0.098
+      },
+      "fog": {
+        "FID": 128.5,
+        "KID_x100": 6.754,
+        "KID_std": 0.063
+      },
+      "rain": {
+        "FID": 157.2,
+        "KID_x100": 12.065,
+        "KID_std": 0.116
+      },
+      "snow": {
+        "FID": 163.2,
+        "KID_x100": 11.436,
+        "KID_std": 0.069
+      }
+    },
+    "MUSES/rain": {
+      "clear": {
+        "FID": 120.4,
+        "KID_x100": 7.674,
+        "KID_std": 0.077
+      },
+      "fog": {
+        "FID": 130.0,
+        "KID_x100": 8.933,
+        "KID_std": 0.078
+      },
+      "rain": {
+        "FID": 144.4,
+        "KID_x100": 12.813,
+        "KID_std": 0.206
+      },
+      "snow": {
+        "FID": 146.8,
+        "KID_x100": 11.675,
+        "KID_std": 0.106
+      }
+    },
+    "MUSES/snow": {
+      "clear": {
+        "FID": 106.7,
+        "KID_x100": 5.835,
+        "KID_std": 0.056
+      },
+      "fog": {
+        "FID": 126.5,
+        "KID_x100": 8.088,
+        "KID_std": 0.117
+      },
+      "rain": {
+        "FID": 146.4,
+        "KID_x100": 13.369,
+        "KID_std": 0.215
+      },
+      "snow": {
+        "FID": 131.5,
+        "KID_x100": 9.935,
+        "KID_std": 0.155
+      }
+    }
+  },
+  "delta_fid": {
+    "DENSE/clear": {
+      "FID_clear": 310.1,
+      "FID_matched": 310.1,
+      "delta": 0.0,
+      "matched_is_best": false
+    },
+    "DENSE/fog": {
+      "FID_clear": 265.4,
+      "FID_matched": 229.5,
+      "delta": 35.9,
+      "matched_is_best": false
+    },
+    "DENSE/rain": {
+      "FID_clear": 283.0,
+      "FID_matched": 241.4,
+      "delta": 41.6,
+      "matched_is_best": true
+    },
+    "MUSES/clear": {
+      "FID_clear": 116.0,
+      "FID_matched": 116.0,
+      "delta": 0.0,
+      "matched_is_best": true
+    },
+    "MUSES/fog": {
+      "FID_clear": 151.6,
+      "FID_matched": 128.5,
+      "delta": 23.1,
+      "matched_is_best": true
+    },
+    "MUSES/rain": {
+      "FID_clear": 120.4,
+      "FID_matched": 144.4,
+      "delta": -24.0,
+      "matched_is_best": false
+    },
+    "MUSES/snow": {
+      "FID_clear": 106.7,
+      "FID_matched": 131.5,
+      "delta": -24.8,
+      "matched_is_best": false
+    }
+  },
+  "reference": {
+    "real_within: DENSE clear->fog": {
+      "FID": 150.4,
+      "KID_x100": 7.889
+    },
+    "real_cross: DENSE fog->MUSES fog": {
+      "FID": 228.6,
+      "KID_x100": 16.26
+    },
+    "synth_within: AURORA clear->fog": {
+      "FID": 76.4,
+      "KID_x100": 3.701
+    },
+    "real_within: MUSES clear->fog": {
+      "FID": 138.1,
+      "KID_x100": 10.718
+    }
+  }
+}

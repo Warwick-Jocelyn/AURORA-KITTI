@@ -1,0 +1,197 @@
+{
+  "fog": {
+    "dropout_rate": {
+      "values_light_mod_heavy": [
+        0.06455771971124216,
+        0.1990182821044407,
+        0.4193325977960505
+      ],
+      "monotonic": true,
+      "expected_direction": "increasing"
+    },
+    "spurious_rate": {
+      "values_light_mod_heavy": [
+        0.020842159742337562,
+        0.04249835642048,
+        0.07407057096006585
+      ],
+      "monotonic": true,
+      "expected_direction": "increasing"
+    },
+    "perturbed_rate": {
+      "values_light_mod_heavy": [
+        0.0004410617221906286,
+        0.0033377724667963795,
+        0.0049659262615576625
+      ],
+      "monotonic": true,
+      "expected_direction": "increasing"
+    },
+    "preserved_rate": {
+      "values_light_mod_heavy": [
+        0.9350296925056037,
+        0.7983082231711602,
+        0.5777838507021145
+      ],
+      "monotonic": true,
+      "expected_direction": "decreasing"
+    },
+    "range_rmse_pert_m": {
+      "values_light_mod_heavy": [
+        27.854386533963382,
+        34.71344912070817,
+        30.315188578432505
+      ],
+      "monotonic": false,
+      "expected_direction": "increasing"
+    },
+    "eff_range_p95_m": {
+      "values_light_mod_heavy": [
+        31.218456654198835,
+        22.032325324292447,
+        14.480633298992673
+      ],
+      "monotonic": true,
+      "expected_direction": "decreasing"
+    },
+    "near_range_clutter_ratio": {
+      "values_light_mod_heavy": [
+        0.24649708018972885,
+        0.3263567565381485,
+        0.4236648739394019
+      ],
+      "monotonic": true,
+      "expected_direction": "increasing"
+    }
+  },
+  "rain": {
+    "dropout_rate": {
+      "values_light_mod_heavy": [
+        0.08449868093300435,
+        0.20184887525692735,
+        0.21617606223570576
+      ],
+      "monotonic": true,
+      "expected_direction": "increasing"
+    },
+    "spurious_rate": {
+      "values_light_mod_heavy": [
+        0.0,
+        0.0259696757796993,
+        0.0395784351008181
+      ],
+      "monotonic": true,
+      "expected_direction": "increasing"
+    },
+    "perturbed_rate": {
+      "values_light_mod_heavy": [
+        6.4322047628064195e-06,
+        0.001985102715772952,
+        0.0029850886893804758
+      ],
+      "monotonic": true,
+      "expected_direction": "increasing"
+    },
+    "preserved_rate": {
+      "values_light_mod_heavy": [
+        0.9154954303750508,
+        0.7965667127777479,
+        0.7814841537932083
+      ],
+      "monotonic": true,
+      "expected_direction": "decreasing"
+    },
+    "range_rmse_pert_m": {
+      "values_light_mod_heavy": [
+        10.209300767379395,
+        27.75774957009357,
+        28.04916675950067
+      ],
+      "monotonic": true,
+      "expected_direction": "increasing"
+    },
+    "eff_range_p95_m": {
+      "values_light_mod_heavy": [
+        41.0652671500428,
+        26.507792637711866,
+        25.416705953663786
+      ],
+      "monotonic": true,
+      "expected_direction": "decreasing"
+    },
+    "near_range_clutter_ratio": {
+      "values_light_mod_heavy": [
+        0.2483391846296035,
+        0.2830247225036442,
+        0.30378426142326453
+      ],
+      "monotonic": true,
+      "expected_direction": "increasing"
+    }
+  },
+  "snow": {
+    "dropout_rate": {
+      "values_light_mod_heavy": [
+        0.19782749661168508,
+        0.20609042011452958,
+        0.20393431945421092
+      ],
+      "monotonic": false,
+      "expected_direction": "increasing"
+    },
+    "spurious_rate": {
+      "values_light_mod_heavy": [
+        0.021278924258281862,
+        0.02628420102042378,
+        0.028854779442930783
+      ],
+      "monotonic": true,
+      "expected_direction": "increasing"
+    },
+    "perturbed_rate": {
+      "values_light_mod_heavy": [
+        0.0025942666733206853,
+        0.0035994454029940138,
+        0.0039671568917397405
+      ],
+      "monotonic": true,
+      "expected_direction": "increasing"
+    },
+    "preserved_rate": {
+      "values_light_mod_heavy": [
+        0.8000914539965204,
+        0.7910519456977587,
+        0.7929075630949344
+      ],
+      "monotonic": false,
+      "expected_direction": "decreasing"
+    },
+    "range_rmse_pert_m": {
+      "values_light_mod_heavy": [
+        16.730648383341087,
+        15.667961445901955,
+        15.095737735227901
+      ],
+      "monotonic": false,
+      "expected_direction": "increasing"
+    },
+    "eff_range_p95_m": {
+      "values_light_mod_heavy": [
+        33.062047124003975,
+        32.64087490772637,
+        32.09002922117247
+      ],
+      "monotonic": true,
+      "expected_direction": "decreasing"
+    },
+    "near_range_clutter_ratio": {
+      "values_light_mod_heavy": [
+        0.25513317350023257,
+        0.25323496960701986,
+        0.2544037649783427
+      ],
+      "monotonic": false,
+      "expected_direction": "increasing"
+    }
+  }
+}

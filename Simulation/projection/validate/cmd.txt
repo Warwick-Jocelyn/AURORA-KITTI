@@ -1,0 +1,43 @@
+python lidar_stats_only.py \
+   --dir_a "/path/to/aurora-root/PhD_Project_2025/lidar_compound_noise_models_original/raw_lidar/val" \
+   --h_fov_min -180 --h_fov_max 180 \
+   --v_fov_min -24.9 --v_fov_max 3.0 \
+   --out_csv_a stats_A.csv
+
+
+
+
+avg_points=119819.98
+
+(muses) user@host:~/Dataset/AuroraDepth/Codes_Lidar_Generation/Lidar_Validate$ python /path/to/aurora-root/Dataset/AuroraDepth/Codes_Lidar_Generation/Lidar_Validate/ratio_w_filter.py
+🗂️ Split=val | weather=Fog | severity=['light'] | candidates=276
+   Height constrain: z ≤ 2.913000 m
+✅ 有效样本: 276 | 跳过: 0
+  [0.0,12.0) m:   21432253 pts |  66.16%
+  [12.0,24.0) m:    7690713 pts |  23.74%
+  [24.0,∞) m:    3270406 pts |  10.10%
+       TOTAL:   32393372 pts
+  Average of points     : 117367.289855 pts/frame
+  Average point distance: 11.959762 m
+(muses) user@host:~/Dataset/AuroraDepth/Codes_Lidar_Generation/Lidar_Validate$ python /path/to/aurora-root/Dataset/AuroraDepth/Codes_Lidar_Generation/Lidar_Validate/ratio_w_filter.py
+🗂️ Split=val | weather=Fog | severity=['moderate'] | candidates=276
+   Height constrain: z ≤ 2.913000 m
+✅ 有效样本: 276 | 跳过: 0
+  [0.0,12.0) m:   21762842 pts |  72.53%
+  [12.0,24.0) m:    7126743 pts |  23.75%
+  [24.0,∞) m:    1114714 pts |   3.72%
+       TOTAL:   30004299 pts
+  Average of points     : 108711.228261 pts/frame
+  Average point distance: 10.017291 m
+(muses) user@host:~/Dataset/AuroraDepth/Codes_Lidar_Generation/Lidar_Validate$ python /path/to/aurora-root/Dataset/AuroraDepth/Codes_Lidar_Generation/Lidar_Validate/ratio_w_filter.py
+🗂️ Split=val | weather=Fog | severity=['heavy'] | candidates=276
+   Height constrain: z ≤ 2.913000 m
+✅ 有效样本: 276 | 跳过: 0
+  [0.0,12.0) m:   21153678 pts |  83.66%
+  [12.0,24.0) m:    4132956 pts |  16.34%
+  [24.0,∞) m:          0 pts |   0.00%
+       TOTAL:   25286634 pts
+  Average of points     : 91618.239130 pts/frame
+  Average point distance: 8.078487 m
+
+

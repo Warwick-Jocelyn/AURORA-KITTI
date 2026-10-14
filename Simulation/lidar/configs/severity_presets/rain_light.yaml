@@ -1,0 +1,11 @@
+# AURORA-KITTI severity preset.
+# Reconstructed from hand-written notes in the original configs/noise_params/*.yaml.
+# In the original pipeline severity was set by HAND-EDITING the params file between
+# runs; --csv_severity only selected which frames to process. These presets make that
+# tacit convention explicit and reproducible.
+# Rain, LIGHT.    Measured mean point retention: 86.56%
+rain_intensity: 10.0
+min_drop_size: 0.05
+water_refract_index:
+  real: 1.328
+  imaginary: 4.86e-7

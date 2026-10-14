@@ -1,0 +1,4 @@
+# probability: 6.e-5 # Probability of obstruction
+probability: 2.e-3 # Probability of obstruction
+max_size: 5 # pixel
+# max_size: 25 # pixel

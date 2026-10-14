@@ -1,0 +1,5 @@
+alpha: 0.010 # Should be from this list [0.005, 0.01, 0.02, 0.03, 0.06, 0.1, 0.12, 0.15, 0.2]
+
+# The three selected values seem a bit non-uniformly distributed. 
+# Since MOR (visibility) in meters is ca. 3/(att. coeff.), 
+# a distribution such as {0.01, 0.03, 0.1} would seem more reasonable.

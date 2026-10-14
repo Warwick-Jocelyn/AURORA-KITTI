@@ -1,0 +1,7 @@
+conda activate fidkid
+
+cd /path/to/aurora-root/Dataset/AuroraKITTI/Codes_RGB_AuraKITTI_Generation_Tools/RGB_validate
+
+python compute_iqa_scores.py
+
+python 

@@ -1,0 +1,30 @@
+\begin{table}[t]
+\centering
+\caption{Severity-matched AURORA-KITTI vs real adverse weather (MUSES / DENSE). WSC cosine and shift magnitude use the same normalization frame as the original all-severity study (App.~X); \emph{light} and \emph{light+mod} restrict the AURORA pool to the light (resp.\ light+moderate) severity label before recomputing the clear$\to$weather physical shift. Real |shift| is fixed per weather/dataset (unaffected by AURORA subsetting).}
+\label{tab:severity_realism}
+\begin{tabular}{llrrrrr}
+\toprule
+Weather & Real ref. & AURORA subset & WSC cosine $\uparrow$ & AURORA $|$shift$|$ & Real $|$shift$|$ & FID $\downarrow$ \\
+\midrule
+Fog & MUSES & light & +0.740 & 3.14 & 1.73 & 144.1 \\
+ &  & light+mod & +0.759 & 3.61 & 1.73 & 133.4 \\
+ &  & all (orig.) & +0.769 & 4.25 & 1.73 & 128.5 \\
+\addlinespace
+Fog & DENSE & light & +0.790 & 3.14 & 1.59 & 242.9 \\
+ &  & light+mod & +0.795 & 3.61 & 1.59 & 237.1 \\
+ &  & all (orig.) & +0.782 & 4.25 & 1.59 & 229.5 \\
+\addlinespace
+Rain & MUSES & light & -0.317 & 3.65 & 0.27 & 130.8 \\
+ &  & light+mod & -0.317 & 3.63 & 0.27 & 137.2 \\
+ &  & all (orig.) & -0.319 & 3.36 & 0.27 & 144.4 \\
+\addlinespace
+Rain & DENSE & light & +0.685 & 3.65 & 2.01 & 243.7 \\
+ &  & light+mod & +0.684 & 3.63 & 2.01 & 235.7 \\
+ &  & all (orig.) & +0.609 & 3.36 & 2.01 & 241.4 \\
+\addlinespace
+Snow & MUSES & light & +0.573 & 3.10 & 0.86 & 129.5 \\
+ &  & light+mod & +0.570 & 3.12 & 0.86 & 123.9 \\
+ &  & all (orig.) & +0.569 & 3.10 & 0.86 & 131.5 \\
+\bottomrule
+\end{tabular}
+\end{table}

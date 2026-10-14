@@ -59,7 +59,7 @@ All rows except DDCD are zero-shot off-the-shelf checkpoints; DDCD is trained in
 | Folder | Contents |
 |---|---|
 | [`Depth_Models/`](Depth_Models) | DDCD method, benchmark harness, dataset tooling, and our adaptations of 11 baselines |
-| `Simulation/` *(next)* | RGB weather rendering, LiDAR corruption, projection, realism validation |
+| [`Simulation/`](Simulation) | RGB weather rendering, LiDAR corruption, projection, realism validation |
 
 Baselines are **not** vendored — [`Depth_Models/UPSTREAM.md`](Depth_Models/UPSTREAM.md) pins the
 exact upstream commit of every repository so the environment reproduces without redistributing
@@ -70,8 +70,9 @@ code we did not write.
 - [x] DDCD training & inference code
 - [x] Evaluation code (standard + denoising metrics ERR / DCE / CPP)
 - [x] Dataset-construction tooling + frozen 1,600-frame evaluation splits
-- [ ] AURORA-KITTI dataset + weather annotation CSVs
-- [ ] Data generation toolkit (RGB weather rendering, LiDAR corruption, projection)
+- [ ] AURORA-KITTI image data (Hugging Face)
+- [x] Data generation toolkit (RGB weather rendering, LiDAR corruption, projection)
+- [x] Per-frame weather annotations (train / val / test CSVs)
 - [ ] Pretrained checkpoints
 
 Release is in progress — ⭐ / watch this repo for updates, or email for early access.

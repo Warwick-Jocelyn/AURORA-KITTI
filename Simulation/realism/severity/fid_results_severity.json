@@ -1,0 +1,34 @@
+{
+  "fid": {
+    "DENSE/fog": {
+      "n_real": 1360,
+      "AURORA-all": 229.5,
+      "AURORA-light": 242.9,
+      "AURORA-lightmod": 237.1
+    },
+    "MUSES/snow": {
+      "n_real": 583,
+      "AURORA-all": 131.5,
+      "AURORA-light": 129.5,
+      "AURORA-lightmod": 123.9
+    },
+    "DENSE/rain": {
+      "n_real": 160,
+      "AURORA-all": 241.4,
+      "AURORA-light": 243.7,
+      "AURORA-lightmod": 235.7
+    },
+    "MUSES/fog": {
+      "n_real": 583,
+      "AURORA-all": 128.5,
+      "AURORA-light": 144.1,
+      "AURORA-lightmod": 133.4
+    },
+    "MUSES/rain": {
+      "n_real": 584,
+      "AURORA-all": 144.4,
+      "AURORA-light": 130.8,
+      "AURORA-lightmod": 137.2
+    }
+  }
+}

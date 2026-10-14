@@ -1,0 +1,10 @@
+# AURORA-KITTI severity preset.
+# Reconstructed from hand-written notes in the original configs/noise_params/*.yaml.
+# In the original pipeline severity was set by HAND-EDITING the params file between
+# runs; --csv_severity only selected which frames to process. These presets make that
+# tacit convention explicit and reproducible.
+# Wet ground, HEAVY.  Retention 95.65%
+# NOTE: non-monotonic vs light/moderate in the original notes -- VERIFY.
+pavement_depth: 0.00150
+water_height: 0.00020
+noise_floor: 0.20

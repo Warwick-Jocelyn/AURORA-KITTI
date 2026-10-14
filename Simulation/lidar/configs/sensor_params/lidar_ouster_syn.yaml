@@ -1,0 +1,14 @@
+
+  beam_radius: 0.00475 # meters
+  max_range: 170 # meters
+  wavelength: 8.65e-07 # meters
+  pulse_width: 1.0e-14 # seconds
+  receiver_area: 1.0e-06 # square meters
+  horizontal_fov: 360 # meters
+  vertical_fov: 45.0 # meters
+  min_elev_angle: -22.5 # degrees
+  max_elev_angle: 22.5 # degrees
+  min_az_angle: -180 # degrees
+  max_az_angle: 180 # degrees
+  v_channels: 60
+  h_channels: 700
