@@ -54,13 +54,25 @@ Built on [KITTI-DC](https://www.cvlibs.net/datasets/kitti/eval_depth.php?benchma
 
 All rows except DDCD are zero-shot off-the-shelf checkpoints; DDCD is trained in-domain. Full 13-method tables, LiDAR-aware denoising metrics (ERR / DCE / CPP) and ablations are in the paper.
 
+## Code
+
+| Folder | Contents |
+|---|---|
+| [`Depth_Models/`](Depth_Models) | DDCD method, benchmark harness, dataset tooling, and our adaptations of 11 baselines |
+| `Simulation/` *(next)* | RGB weather rendering, LiDAR corruption, projection, realism validation |
+
+Baselines are **not** vendored — [`Depth_Models/UPSTREAM.md`](Depth_Models/UPSTREAM.md) pins the
+exact upstream commit of every repository so the environment reproduces without redistributing
+code we did not write.
+
 ## Release status
 
+- [x] DDCD training & inference code
+- [x] Evaluation code (standard + denoising metrics ERR / DCE / CPP)
+- [x] Dataset-construction tooling + frozen 1,600-frame evaluation splits
 - [ ] AURORA-KITTI dataset + weather annotation CSVs
 - [ ] Data generation toolkit (RGB weather rendering, LiDAR corruption, projection)
-- [ ] DDCD training & inference code
 - [ ] Pretrained checkpoints
-- [ ] Evaluation code (standard + denoising metrics)
 
 Release is in progress — ⭐ / watch this repo for updates, or email for early access.
 
