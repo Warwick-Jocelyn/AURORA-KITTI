@@ -19,7 +19,7 @@ from pytorch_fid.inception import InceptionV3
 from pytorch_fid.fid_score import get_activations
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-ORIG_ROOT = "/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Realism"
+ORIG_ROOT = "/path/to/aurora-root/PhD_Project_2025/Realism"
 ORIG_FEATS = os.path.join(ORIG_ROOT, "feats")
 POOLS = os.path.join(ORIG_ROOT, "pools")
 NEW_FEATS = os.path.join(HERE, "feats")

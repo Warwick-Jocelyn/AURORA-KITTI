@@ -22,7 +22,7 @@ Run: python analyze_shift_severity.py
 import os, json, glob, numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-ORIG_ROOT = "/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Realism"
+ORIG_ROOT = "/path/to/aurora-root/PhD_Project_2025/Realism"
 ORIG_FEATS = os.path.join(ORIG_ROOT, "phys_feats")
 NEW_FEATS = os.path.join(HERE, "phys_feats")
 NAMES = ["dcp", "contrast", "airlight", "sat", "transmit", "hf", "colorful", "bright", "spots"]

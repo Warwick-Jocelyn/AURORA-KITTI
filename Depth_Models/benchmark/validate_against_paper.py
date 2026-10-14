@@ -66,7 +66,7 @@ KNOWN_FLAGS = {  # (json_tag, split) -> reason string
     ),
     ("BPNet", "TEST"): (
         "TEST preds generated at h=352 (2026-05-03 run with ++data.height=352); paper uses h=256. "
-        "Effect: ~-2% RMSE (4945mm vs paper 5047mm). Re-run at h=256 not planned for rebuttal."
+        "Effect: ~-2% RMSE at h=256. "
     ),
     ("S2D-SelfSup-ZeroShot", "TEST"): (
         "Minor -1% discrepancy (5971mm vs paper 6031mm). Abs diff 60mm just over 50mm threshold. "

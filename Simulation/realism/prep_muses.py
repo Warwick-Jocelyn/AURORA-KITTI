@@ -9,7 +9,7 @@ Run: python prep_muses.py
 import os, glob
 
 SRC = "/path/to/aurora-root/Dataset/MUSES/extracted/muses/frame_camera"
-OUT = "/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Realism/pools/MUSES"
+OUT = "/path/to/aurora-root/PhD_Project_2025/Realism/pools/MUSES"
 WEATHERS = ["clear", "fog", "rain", "snow"]
 
 

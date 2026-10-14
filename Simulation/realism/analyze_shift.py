@@ -16,7 +16,7 @@ Uses cached phys_feats/*.npy from phys_metrics.py. Run: python analyze_shift.py
 """
 import os, json, glob, numpy as np
 
-ROOT = "/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Realism"
+ROOT = "/path/to/aurora-root/PhD_Project_2025/Realism"
 FEATS = os.path.join(ROOT, "phys_feats")
 NAMES = ["dcp", "contrast", "airlight", "sat", "transmit", "hf", "colorful", "bright", "spots"]
 WEATHERS = ["fog", "rain", "snow"]

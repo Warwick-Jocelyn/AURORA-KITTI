@@ -385,7 +385,7 @@ class MetricALL(nn.Module):
 class DenoiseMetrics:
     """Model-agnostic DCD denoising metrics: ERR(+SR), DCE, NRR(+CPP).
 
-    Design & formulas: Information_Fusion_rebuttal/DCD_denoising_metrics_design.md.
+    Design & formulas: DCD_denoising_metrics_design.md.
     Error is ALWAYS computed vs the dense GT `G`; the clean/weather sparse pair
     `(S_c, S_w)` only locates the weather noise (masks). Works on any method's
     predicted dense depth `P`, so it is reusable for DDCD, the modality ablations,

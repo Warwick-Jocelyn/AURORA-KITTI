@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Fog-ONLY realism figure for the rebuttal.
+Fog-ONLY realism figure for the .
 Top:  qualitative gallery -- AURORA-KITTI synthetic fog (clear -> light -> moderate ->
       heavy, severity control) vs REAL fog (MUSES, DENSE).
 Bottom: quantitative fog realism -- Weather-Shift Consistency (WSC), clear->fog shift
@@ -15,8 +15,8 @@ import matplotlib.pyplot as plt
 from matplotlib import gridspec
 from PIL import Image
 
-POOLS = "/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Realism/pools"
-OUT   = "/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Realism_updated/rgb_realism/figures"
+POOLS = "/path/to/aurora-root/PhD_Project_2025/Realism/pools"
+OUT   = "/path/to/aurora-root/PhD_Project_2025/Realism_updated/rgb_realism/figures"
 
 # ---- chosen example images (day, clean scenes) ----
 import glob as _glob

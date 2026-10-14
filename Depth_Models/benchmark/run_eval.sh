@@ -3,7 +3,7 @@
 # runs eval_one.py for each row, logs per-job, writes json/<name>__<set>.json.
 # Usage: run_eval.sh <jobs.tsv> [parallelism]
 set -u
-RZB=/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Experiments_Plan/results_zeroshot_benchmark
+RZB=/path/to/aurora-root/PhD_Project_2025/Experiments_Plan/results_zeroshot_benchmark
 PY=/path/to/aurora-root/anaconda3/envs/DMD3C/bin/python
 JOBS="${1:-$RZB/jobs_existing.tsv}"
 P="${2:-5}"

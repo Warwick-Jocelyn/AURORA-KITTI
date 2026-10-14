@@ -190,7 +190,7 @@ def main():
     ap.add_argument("--dry-run", action="store_true", help="print plan, do not read images")
     ap.add_argument(
         "--out",
-        default="/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Realism_updated/lidar_degradation/deliverable1_raw.json",
+        default="/path/to/aurora-root/PhD_Project_2025/Realism_updated/lidar_degradation/deliverable1_raw.json",
     )
     args = ap.parse_args()
 

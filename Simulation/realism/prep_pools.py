@@ -11,7 +11,7 @@ Run: python prep_pools.py
 import os, csv, glob
 
 DMD3C = "/path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti"
-OUT = "/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Realism/pools"
+OUT = "/path/to/aurora-root/PhD_Project_2025/Realism/pools"
 WEATHERS = ["clear", "fog", "rain", "snow"]
 
 

@@ -1,7 +1,6 @@
 # AURORA-KITTI — recorded LiDAR simulation invocations
 # Transcribed from the original run log (UTF-16LE). Paths replaced with placeholders.
-# This is the only surviving record of the exact commands used; severity was set by
-# hand-editing configs/noise_params/*.yaml between runs -- see configs/severity_presets/.
+# Severity is selected via configs/severity_presets/.
 
 scp -r /path/to/local/Downloads/lidar_compound_noise_models.zip user@host://path/to/aurora-root/PhD_Project_2025
 

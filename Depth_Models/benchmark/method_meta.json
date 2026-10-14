@@ -1,5 +1,5 @@
 {
-  "_note": "Params(M) and Time(ms): methods appearing in the paper (Table 4) use paper-reported values (RTX 4090, each method's own reporting convention). NLSPN, CompletionFormer (ZeroShot & AURORA-ft), and OMNI-DC are rebuttal additions not in the paper — values from our own measurement (RTX 4090, batch=1, fp32, GPU-forward-only, CUDA Events, median 50 runs after 10 warmup). Modality: LiDAR=sparse depth only, RGB=image only, RGB+LiDAR=both.",
+  "_note": "Params(M) and Time(ms): methods appearing in the paper (Table 4) use paper-reported values (RTX 4090, each method's own reporting convention). NLSPN, CompletionFormer (ZeroShot & AURORA-ft), and OMNI-DC are  additions not in the paper — values from our own measurement (RTX 4090, batch=1, fp32, GPU-forward-only, CUDA Events, median 50 runs after 10 warmup). Modality: LiDAR=sparse depth only, RGB=image only, RGB+LiDAR=both.",
 
   "IPBasic-fast": {
     "modality": "LiDAR",
@@ -133,7 +133,7 @@
     "modality": "RGB+LiDAR",
     "params_M": 89.87,
     "time_ms": 48.60,
-    "params_src": "paper Table 4: 89.87M; confirmed: paper checkpoint rank01_rmse2802.79mm_dmd3d_bp_kitti_best_ema_new_loss.pth (accessed via symlink BP-Net/checkpoints/DDCD/result_ema.pth)",
+    "params_src": "paper Table 4: 89.87M; confirmed: paper checkpoint ddcd_aurora.pth (accessed via symlink BP-Net/checkpoints/DDCD/result_ema.pth)",
     "time_src": "paper Table 4: 48.60 ms (our bs=1 GPU-only CUDA-Event measurement was 82.0 ms — paper convention differs)"
   },
 

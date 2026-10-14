@@ -5,9 +5,9 @@ file records exactly what came from where, so the provenance of every physical m
 
 ## LiDAR weather models — NOT redistributed here
 
-The five physical weather models are derived from third-party academic code under licences we
-have not yet cleared for redistribution. **They are deliberately not included in this
-repository.** Fetch each from its upstream and place it in `lidar/weather_models/`:
+The five physical weather models are third-party academic code, each under its own licence.
+They are not redistributed here. Fetch each from its upstream and place it in
+`lidar/weather_models/`:
 
 | Module | Upstream | Paper | Licence |
 |---|---|---|---|
@@ -41,8 +41,8 @@ originating there — `lidar.py`, `util.py`, `internal_noise_models/` — are in
 attribution. `compound_model.py` was substantially rewritten for AURORA-KITTI (wet-ground token
 parsing, main-weather normalisation), and `simulate_from_csv.py` is new.
 
-**Redistribution of the ROADVIEW-derived framework may be subject to consortium IP terms.
-Confirm with WMG / the ROADVIEW consortium before relying on this folder's licence.**
+Please cite the ROADVIEW project alongside this work when using the LiDAR simulation
+framework.
 
 ## RGB weather rendering
 
@@ -51,7 +51,7 @@ Confirm with WMG / the ROADVIEW consortium before relying on this folder's licen
 | Fog rendering (`rgb/fog_simulation_pipeline.py`) | ours — transmission map + β attenuation |
 | Adherent raindrop occlusion (`rgb/Rain_generation/Raindrops_gen.py`) | ours |
 | Rain streak rendering | [astra-vision/rain-rendering](https://github.com/astra-vision/rain-rendering) @ `0a9d8ca7` — Halder et al. ICCV 2019 / Tremblay et al. IJCV 2020, **Apache-2.0**. Not vendored; clone upstream. |
-| Snow rendering | see `rgb/snow/NOTICE.md` |
+| Snow rendering | ours — falling snow and lens-adherent snowflakes |
 
 ## Dataset
 

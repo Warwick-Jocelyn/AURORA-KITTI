@@ -7,7 +7,7 @@ set -u
 cd /path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C
 PY=/path/to/aurora-root/anaconda3/envs/DMD3C/bin/python
 PRED=./predictions/DDCD_ablation_nonorm_v2_TEST352
-RZB=/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Experiments_Plan/results_zeroshot_benchmark
+RZB=/path/to/aurora-root/PhD_Project_2025/Experiments_Plan/results_zeroshot_benchmark
 OUT=$RZB/json/DDCD_ablation_nonorm_v2__TEST.json
 INFER_PID=274201
 

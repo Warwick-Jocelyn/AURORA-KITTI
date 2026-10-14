@@ -3,7 +3,7 @@
 JSON results + figures. Run after make_figs.py."""
 import os, json, base64
 
-ROOT = "/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Realism"
+ROOT = "/path/to/aurora-root/PhD_Project_2025/Realism"
 FIG = os.path.join(ROOT, "figures")
 fid = json.load(open(os.path.join(ROOT, "fid_results.json")))
 sh = json.load(open(os.path.join(ROOT, "shift_results.json")))

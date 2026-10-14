@@ -20,7 +20,7 @@ Also prints a verification summary (matched / unmatched counts per weather per s
 import os, csv, json, glob
 
 DMD3C = "/path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C/datas/kitti"
-POOLS = "/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Realism/pools"
+POOLS = "/path/to/aurora-root/PhD_Project_2025/Realism/pools"
 OUT = os.path.dirname(os.path.abspath(__file__))
 WEATHERS = ["fog", "rain", "snow"]
 

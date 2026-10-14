@@ -26,7 +26,7 @@ sys.path.append(os.path.abspath(os.path.join(_THIS, "..")))
 from utils import Trainer
 from test import _pick_inputs_for_forward
 
-CKPT = "checkpoints/_unified/rank01_rmse2802.79mm_dmd3d_bp_kitti_best_ema_new_loss.pth"
+CKPT = "checkpoints/_unified/ddcd_aurora.pth"
 CSV_PATH = "datas/kitti/val_selection_cropped_TEST/test_small.csv"
 OUT_CSV = "weather_breakdown.csv"
 OUT_MD = "weather_breakdown.md"

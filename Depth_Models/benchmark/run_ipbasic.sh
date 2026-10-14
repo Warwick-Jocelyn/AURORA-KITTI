@@ -1,5 +1,5 @@
 #!/bin/bash
-RZB=/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Experiments_Plan/results_zeroshot_benchmark
+RZB=/path/to/aurora-root/PhD_Project_2025/Experiments_Plan/results_zeroshot_benchmark
 PY=/path/to/aurora-root/anaconda3/envs/DMD3C/bin/python
 cd "$RZB" || exit 1
 for fill in fast multiscale; do

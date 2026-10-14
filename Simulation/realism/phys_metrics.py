@@ -25,7 +25,7 @@ Run: python phys_metrics.py [AURORA DENSE MUSES]
 import os, sys, json, glob, numpy as np, cv2
 from scipy.stats import wasserstein_distance
 
-ROOT = "/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Realism"
+ROOT = "/path/to/aurora-root/PhD_Project_2025/Realism"
 POOLS = os.path.join(ROOT, "pools")
 FEATS = os.path.join(ROOT, "phys_feats")
 os.makedirs(FEATS, exist_ok=True)

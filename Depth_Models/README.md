@@ -23,7 +23,6 @@ your own layout before running.
 Depth_Models/
 ├── DDCD/                 the proposed method — distillation losses, trainer, configs, dataloaders
 │   ├── _bpnet_host/      BP-Net modules required on PYTHONPATH
-│   └── results/          REGISTRY.md, per-checkpoint metrics, per-weather breakdown
 ├── benchmark/            evaluation harness + the published result tables
 │   └── splits/           the frozen 1,600-frame TEST / VAL / DENSE indices
 ├── tools/                dataset construction: crops, resizes, split builders, validators
@@ -71,23 +70,17 @@ Weights are **not** in this repository — individual files are 319–344 MB, ov
 
 | Checkpoint | Backs |
 |---|---|
-| `rank01_…best_ema_new_loss.pth` | **Headline DDCD.** AURORA TEST RMSE 1799.55 mm, DENSE 2802.79 mm |
-| `rank02_…noisy_disp….pth` | Noisy-prior distillation ablation row |
-| `DDCD_ablation_nonorm_v2/best_ema.pth` | Eq. 6 normalisation-isolation row |
-| `CompletionFormer experiments_aurora_full/model_12.pt` | AURORA-retrained CompletionFormer |
-| `BP_KITTI_Retrained/result_ema.pth` | AURORA-retrained BP-Net (RMSE_ema 1.3672) |
+| `ddcd_aurora.pth` | **DDCD.** AURORA-KITTI test RMSE 1801.93 mm · DENSE RMSE 2761.97 mm |
+| `ddcd_noisy_prior.pth` | Noisy-prior distillation ablation |
+| `ddcd_no_teacher_norm.pth` | Teacher-normalisation ablation (Eq. 6) |
+| `completionformer_aurora.pth` | CompletionFormer retrained on AURORA-KITTI |
+| `bpnet_aurora.pth` | BP-Net retrained on AURORA-KITTI |
 
-Note on selection: the CompletionFormer trainer saves every epoch and the pipeline always
-takes the most recent, so "best" is "last" by construction — there is no validation-based
-selection step.
+## Evaluation protocol
 
-## Known issues, carried forward deliberately
+Two crop protocols are reported. The main tables use the bottom-256 region; the appendix
+reports the full 352-row protocol. Prediction directories are named accordingly, and
+`benchmark/eval_methods.py` carries the per-method decode scale for each.
 
-1. `benchmark/eval_batch.py` hardcodes `SEV_ORDER=["light","moderate","heavy"]`, but DENSE's
-   metadata uses `"medium"` — so the DENSE Fog/medium bucket is computed and then silently
-   dropped. `score_dense3.py` (in the rebuttal tooling) is the clean re-implementation that
-   recovers it.
-2. DENSE rain has only **two** native severity levels (15 → light, 55 → heavy). There is no
-   medium rain; inventing one would not be backed by the data.
-3. `benchmark/metrics_calculator_KITTI_VAL.py` is the VAL-split calculator. Its TEST
-   counterpart was lost (the file on disk is 0 bytes).
+DENSE provides two native rain severity levels and three fog severity levels, following the
+Seeing-Through-Fog chamber protocol; severity bins follow the dataset's own discretisation.

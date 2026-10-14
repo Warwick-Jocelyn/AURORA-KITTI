@@ -15,7 +15,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
-OUTDIR = "/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Realism_updated/lidar_degradation"
+OUTDIR = "/path/to/aurora-root/PhD_Project_2025/Realism_updated/lidar_degradation"
 
 d1 = json.load(open(os.path.join(OUTDIR, "deliverable1_raw.json")))
 d2 = json.load(open(os.path.join(OUTDIR, "deliverable2_raw.json")))

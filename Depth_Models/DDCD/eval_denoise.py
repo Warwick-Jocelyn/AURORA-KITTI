@@ -19,7 +19,7 @@ Quick self-tests (no model needed, validate plumbing):
   python eval_denoise.py --self_test perfect   # expect ERR=1, DCE=0
   python eval_denoise.py --self_test copy       # expect ERR=0 (P=S_w)
 
-Metric definitions: Information_Fusion_rebuttal/DCD_denoising_metrics_design.md
+Metric definitions: DCD_denoising_metrics_design.md
 """
 import os
 import sys
@@ -142,7 +142,7 @@ def main():
     md = [f"# {args.set} — DCD denoising metrics (tau={args.tau})\n",
           "ERR↑ (denoising of corrupted returns), SR↑ (suppression rate), DCE↓ (dropout completion RMSE/MAE, mm), "
           "NRR→1 (noise/clean error ratio), CPP (clean-point error, mm). Pixel-pooled. "
-          "See `Information_Fusion_rebuttal/DCD_denoising_metrics_design.md`.\n",
+          "See `DCD_denoising_metrics_design.md`.\n",
           "| Group | ERR↑ | SR↑ | DCE↓(mm) | DCE-MAE(mm) | NRR→1 | CPP(mm) | n_cor | n_drop | n_keep |",
           "|---|---|---|---|---|---|---|---|---|---|"]
     for r in rows:

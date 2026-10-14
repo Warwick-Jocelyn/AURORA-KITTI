@@ -12,7 +12,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-ROOT = "/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Realism"
+ROOT = "/path/to/aurora-root/PhD_Project_2025/Realism"
 FIG = os.path.join(ROOT, "figures"); os.makedirs(FIG, exist_ok=True)
 WE = ["clear", "fog", "rain", "snow"]
 plt.rcParams.update({"font.size": 11, "figure.dpi": 130, "savefig.bbox": "tight"})

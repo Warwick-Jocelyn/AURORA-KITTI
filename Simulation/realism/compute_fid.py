@@ -22,7 +22,7 @@ from scipy import linalg
 from pytorch_fid.inception import InceptionV3
 from pytorch_fid.fid_score import get_activations
 
-ROOT = "/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Realism"
+ROOT = "/path/to/aurora-root/PhD_Project_2025/Realism"
 POOLS = os.path.join(ROOT, "pools")
 FEATS = os.path.join(ROOT, "feats")
 os.makedirs(FEATS, exist_ok=True)

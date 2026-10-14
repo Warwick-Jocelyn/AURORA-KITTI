@@ -3,8 +3,8 @@ set -u
 ROOT=/path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C
 cd "$ROOT"; export PYTHONPATH=$(realpath ..):
 PY=/path/to/aurora-root/anaconda3/envs/DMD3C/bin/python
-RZB=/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Experiments_Plan/results_zeroshot_benchmark
-CKPT=checkpoints/_unified/rank02_rmse3066.92mm_dmd3d_bp_kitti_noisy_disp_best_ema_noisy_dis.pth
+RZB=/path/to/aurora-root/PhD_Project_2025/Experiments_Plan/results_zeroshot_benchmark
+CKPT=checkpoints/_unified/ddcd_noisy_prior.pth
 PRED=./predictions/DDCD_noisy_disp_TEST352
 # symlink must be TEST for AURORA-KITTI TEST
 [ "$(readlink datas/kitti/val_selection_cropped)" = "val_selection_cropped_TEST" ] || { echo "SYMLINK NOT TEST -- abort"; exit 3; }

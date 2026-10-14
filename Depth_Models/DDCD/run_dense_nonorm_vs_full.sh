@@ -9,7 +9,7 @@ ROOT=/path/to/aurora-root/PhD_Project_2025/DMD3C/BP-Net/DMD3C
 cd "$ROOT"
 PY=/path/to/aurora-root/anaconda3/envs/DMD3C/bin/python
 export PYTHONPATH=$(realpath ..):
-RZB=/path/to/aurora-root/PhD_Project_2025/Information_Fusion_rebuttal/Experiments_Plan/results_zeroshot_benchmark
+RZB=/path/to/aurora-root/PhD_Project_2025/Experiments_Plan/results_zeroshot_benchmark
 
 LINK=datas/kitti/val_selection_cropped
 ORIG_TARGET=$(readlink "$LINK")   # val_selection_cropped_TEST
@@ -17,7 +17,7 @@ echo "[$(date '+%F %T')] original symlink target = $ORIG_TARGET"
 restore() { ln -sfn "$ORIG_TARGET" "$LINK"; echo "[$(date '+%F %T')] symlink restored -> $(readlink "$LINK")"; }
 trap restore EXIT
 
-FULL_CKPT=checkpoints/_unified/rank01_rmse2802.79mm_dmd3d_bp_kitti_best_ema_new_loss.pth
+FULL_CKPT=checkpoints/_unified/ddcd_aurora.pth
 NONORM_CKPT=checkpoint/DDCD_ablation_nonorm_v2/best_ema.pth
 FULL_PRED=./predictions/DDCD_full_DENSE_recheck
 NONORM_PRED=./predictions/DDCD_nonorm_v2_DENSE
