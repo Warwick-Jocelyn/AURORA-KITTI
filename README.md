@@ -54,28 +54,45 @@ Built on [KITTI-DC](https://www.cvlibs.net/datasets/kitti/eval_depth.php?benchma
 
 All rows except DDCD are zero-shot off-the-shelf checkpoints; DDCD is trained in-domain. Full 13-method tables, LiDAR-aware denoising metrics (ERR / DCE / CPP) and ablations are in the paper.
 
+## Downloads
+
+| | Link |
+|---|---|
+| **Dataset** (36.7 GB) | [🤗 JocelynW/AURORA-KITTI](https://huggingface.co/datasets/JocelynW/AURORA-KITTI) |
+| **Checkpoints** (1.7 GB) | [🤗 JocelynW/AURORA-KITTI-models](https://huggingface.co/JocelynW/AURORA-KITTI-models) |
+
+```bash
+# dataset — start with the test split (2.6 GB) to reproduce the benchmark
+hf download JocelynW/AURORA-KITTI --repo-type dataset \
+    --include "data/*_test.tar" "annotations/*" --local-dir aurora-kitti
+
+# checkpoints
+hf download JocelynW/AURORA-KITTI-models --local-dir checkpoints
+```
+
+## Model zoo
+
+| Checkpoint | Model |
+|---|---|
+| `ddcd_aurora.pth` | **DDCD** — the proposed baseline |
+| `ddcd_noisy_prior.pth` | DDCD, distilled from a noisy-RGB teacher (ablation) |
+| `ddcd_no_teacher_norm.pth` | DDCD, teacher normalisation disabled (ablation) |
+| `bpnet_aurora.pth` | BP-Net retrained on AURORA-KITTI |
+| `completionformer_aurora.pth` | CompletionFormer retrained on AURORA-KITTI |
+
+`ddcd_aurora.pth` reproduces the published results exactly — AURORA-KITTI test RMSE **1801.93 mm**,
+DENSE RMSE **2761.97 mm** — verified with
+[`validate_against_paper.py`](Depth_Models/benchmark/validate_against_paper.py).
+
 ## Code
 
 | Folder | Contents |
 |---|---|
-| [`Depth_Models/`](Depth_Models) | DDCD method, benchmark harness, dataset tooling, and our adaptations of 11 baselines |
-| [`Simulation/`](Simulation) | RGB weather rendering, LiDAR corruption, projection, realism validation |
+| [`Depth_Models/`](Depth_Models) | DDCD, benchmark harness, dataset tooling, and our adaptations of 11 baselines |
+| [`Simulation/`](Simulation) | RGB weather rendering (fog, rain, snow), LiDAR corruption, projection, realism validation |
 
-Baselines are **not** vendored — [`Depth_Models/UPSTREAM.md`](Depth_Models/UPSTREAM.md) pins the
-exact upstream commit of every repository so the environment reproduces without redistributing
-code we did not write.
-
-## Release status
-
-- [x] DDCD training & inference code
-- [x] Evaluation code (standard + denoising metrics ERR / DCE / CPP)
-- [x] Dataset-construction tooling + frozen 1,600-frame evaluation splits
-- [ ] AURORA-KITTI image data (Hugging Face)
-- [x] Data generation toolkit (RGB weather rendering, LiDAR corruption, projection)
-- [x] Per-frame weather annotations (train / val / test CSVs)
-- [ ] Pretrained checkpoints
-
-Release is in progress — ⭐ / watch this repo for updates, or email for early access.
+Baselines are not vendored — [`Depth_Models/UPSTREAM.md`](Depth_Models/UPSTREAM.md) pins the exact
+upstream commit of each repository.
 
 ## Citation
 
