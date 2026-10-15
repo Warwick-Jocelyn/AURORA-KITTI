@@ -15,3 +15,10 @@ After fetching each upstream file into this directory, apply these adaptations:
 3. **`rain.py`** — SciPy compatibility shim: `scipy.integrate.trapz` → `trapezoid`.
 4. **`fog.py`** — `alpha` is hard-constrained to `{0.005, 0.01, 0.02, 0.03, 0.06, 0.1, 0.12,
    0.15, 0.2}` by the precomputed integral tables in `../pre_computed_materials/fog/`.
+
+## Note on the Mie cache filename
+
+`../pre_computed_materials/rain/mie_1.328_λ_905.npz` contains a non-ASCII character (λ) in its
+filename. This matches what upstream `rain.py` expects, so do not rename it. On Windows or with
+tooling that mishandles UTF-8 filenames, check out the repository with
+`git config core.quotepath false` and ensure a UTF-8 locale.
