@@ -10,6 +10,8 @@
 
 [![Paper](https://img.shields.io/badge/Paper-Information%20Fusion-00599c)](https://doi.org/10.1016/j.inffus.2026.104830)
 [![DOI](https://img.shields.io/badge/DOI-10.1016%2Fj.inffus.2026.104830-blue)](https://doi.org/10.1016/j.inffus.2026.104830)
+[![Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-AURORA--KITTI-yellow)](https://huggingface.co/datasets/JocelynW/AURORA-KITTI)
+[![Models](https://img.shields.io/badge/%F0%9F%A4%97%20Models-DDCD-yellow)](https://huggingface.co/JocelynW/AURORA-KITTI-models)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 </div>
