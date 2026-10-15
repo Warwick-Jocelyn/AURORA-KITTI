@@ -59,7 +59,7 @@ All rows except DDCD are zero-shot off-the-shelf checkpoints; DDCD is trained in
 | | Link |
 |---|---|
 | **Dataset** (36.7 GB) | [🤗 JocelynW/AURORA-KITTI](https://huggingface.co/datasets/JocelynW/AURORA-KITTI) |
-| **Checkpoints** (1.7 GB) | [🤗 JocelynW/AURORA-KITTI-models](https://huggingface.co/JocelynW/AURORA-KITTI-models) |
+| **Checkpoints** | [🤗 JocelynW/AURORA-KITTI-models](https://huggingface.co/JocelynW/AURORA-KITTI-models) |
 
 ```bash
 # dataset — start with the test split (2.6 GB) to reproduce the benchmark
@@ -75,14 +75,13 @@ hf download JocelynW/AURORA-KITTI-models --local-dir checkpoints
 | Checkpoint | Model |
 |---|---|
 | `ddcd_aurora.pth` | **DDCD** — the proposed baseline |
-| `ddcd_noisy_prior.pth` | DDCD, distilled from a noisy-RGB teacher (ablation) |
-| `ddcd_no_teacher_norm.pth` | DDCD, teacher normalisation disabled (ablation) |
-| `bpnet_aurora.pth` | BP-Net retrained on AURORA-KITTI |
-| `completionformer_aurora.pth` | CompletionFormer retrained on AURORA-KITTI |
 
-`ddcd_aurora.pth` reproduces the published results exactly — AURORA-KITTI test RMSE **1801.93 mm**,
-DENSE RMSE **2761.97 mm** — verified with
+Reproduces the published results exactly — AURORA-KITTI test RMSE **1801.93 mm**, DENSE RMSE
+**2761.97 mm** — verified with
 [`validate_against_paper.py`](Depth_Models/benchmark/validate_against_paper.py).
+
+Ablation and retrained-baseline checkpoints will be added once verified against the published
+tables.
 
 ## Code
 
