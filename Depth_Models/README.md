@@ -46,6 +46,12 @@ Depth_Models/
 Teacher convention: `disp/` = Depth-Anything-**V2**, `da3/` = Depth-Anything-**V3**. The
 headline DDCD result uses V2 (`configs/data/KITTI_V2CLEAN.yaml`).
 
+## Data setup
+
+[`DATA_SETUP.md`](DATA_SETUP.md) records exactly what to download (KITTI raw, KITTI
+depth-completion, AURORA-KITTI, DENSE), the expected directory layout, and how the
+Depth-Anything teacher outputs are produced.
+
 ## Benchmark
 
 `benchmark/eval_methods.py` produces the paper's tables. It reads per-method prediction
