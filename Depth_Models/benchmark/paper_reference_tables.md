@@ -56,5 +56,6 @@ only.
 
 ## Evaluation protocol
 
-Both benchmarks use 1,600 frames. The main tables use the bottom-256 crop region; the appendix
+**Both benchmarks are evaluated on a fixed 1,600-frame subset, not the full test split.**
+The frame indices are `benchmark/splits/test_small.csv` and `dense_small.csv`. The main tables use the bottom-256 crop region; the appendix
 reports the full 352-row protocol.

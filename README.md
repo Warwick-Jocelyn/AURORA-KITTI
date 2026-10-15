@@ -44,6 +44,8 @@ Built on [KITTI-DC](https://www.cvlibs.net/datasets/kitti/eval_depth.php?benchma
 
 ## Results (RMSE, mm)
 
+All numbers are on the fixed **1,600-frame** test subset used in the paper, not the full split.
+
 | Method | Input | AURORA-KITTI test | DENSE (real) |
 |---|---|---:|---:|
 | IP-Basic (multi) | LiDAR | 6916.28 | 7346.78 |
@@ -62,9 +64,12 @@ All rows except DDCD are zero-shot off-the-shelf checkpoints; DDCD is trained in
 | **Checkpoints** | [🤗 JocelynW/AURORA-KITTI-models](https://huggingface.co/JocelynW/AURORA-KITTI-models) |
 
 ```bash
-# dataset — start with the test split (2.6 GB) to reproduce the benchmark
+# the 1,600-frame benchmark the paper's tables are computed on
 hf download JocelynW/AURORA-KITTI --repo-type dataset \
-    --include "data/*_test.tar" "annotations/*" --local-dir aurora-kitti
+    --include "benchmark_1600/*" --local-dir aurora-kitti
+
+# full dataset (37 GB) — or --include "data/*_test.tar" for the test split only
+hf download JocelynW/AURORA-KITTI --repo-type dataset --local-dir aurora-kitti
 
 # checkpoints
 hf download JocelynW/AURORA-KITTI-models --local-dir checkpoints
